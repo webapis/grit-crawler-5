@@ -47,7 +47,7 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
         ...data, price1,
         priceInBasket,
     }
-    await pushData(cleanedPrice);
+    await pushData(data);
 
 
 });
