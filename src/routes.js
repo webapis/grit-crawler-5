@@ -22,8 +22,8 @@ router.addDefaultHandler(async ({ enqueueLinks, log }) => {
 
 router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks }) => {
     const title = await page.title();
-    log.info(`${title}`, { url: request.loadedUrl });
-
+    log.info(`LIST ${title}`, { url: request.loadedUrl });
+    await page.waitForSelector(pSelector)
     await enqueueLinks({
         selector: dphref,
         label: 'detail',
@@ -33,9 +33,9 @@ router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks })
 });
 router.addHandler('detail', async ({ request, page, log, pushData }) => {
     const title = await page.title();
-    log.info(`${title}`, { url: request.loadedUrl });
+    log.info(`DETAIL ${title}`, { url: request.loadedUrl });
 
-
+    await page.waitForSelector(dpSelector)
     // handler()
 
     await pushData({

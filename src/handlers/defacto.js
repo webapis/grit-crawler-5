@@ -5,7 +5,7 @@ export default function defacto() {
 }
 
 const pSelector = '.catalog-products'
-const dpSelector = '.product-main-container'
+const dpSelector = '#product-main-container'
 
 const phref = '.list-group-item a'
 const dphref = '.product-card a'
