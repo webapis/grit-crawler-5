@@ -1,9 +1,0 @@
-{
-	"id": "jaBSLK4tjlUAPGc",
-	"json": "{\"id\":\"jaBSLK4tjlUAPGc\",\"url\":\"https://crawlee.dev/blog\",\"loadedUrl\":\"https://crawlee.dev/blog\",\"uniqueKey\":\"https://crawlee.dev/blog\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"label\":\"detail\",\"__crawlee\":{\"skipNavigation\":false,\"state\":4}},\"handledAt\":\"2024-03-07T04:51:26.359Z\"}",
-	"method": "GET",
-	"orderNo": null,
-	"retryCount": 0,
-	"uniqueKey": "https://crawlee.dev/blog",
-	"url": "https://crawlee.dev/blog"
-}

@@ -1,9 +1,0 @@
-{
-	"id": "3mDivhaZDtR9SwT",
-	"json": "{\"id\":\"3mDivhaZDtR9SwT\",\"url\":\"https://crawlee.dev/docs/guides/proxy-management\",\"loadedUrl\":\"https://crawlee.dev/docs/guides/proxy-management\",\"uniqueKey\":\"https://crawlee.dev/docs/guides/proxy-management\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"label\":\"detail\",\"__crawlee\":{\"skipNavigation\":false,\"state\":4}},\"handledAt\":\"2024-03-07T04:51:36.496Z\"}",
-	"method": "GET",
-	"orderNo": null,
-	"retryCount": 0,
-	"uniqueKey": "https://crawlee.dev/docs/guides/proxy-management",
-	"url": "https://crawlee.dev/docs/guides/proxy-management"
-}
