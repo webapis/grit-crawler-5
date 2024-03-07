@@ -6,7 +6,7 @@ import preNavigationHooks from './crawler-helper/preNavigationHooks.js';
 dotenv.config({ silent: true });
 debugger
 const brand = process.env.brand
-const {  url:startUrls } = await import(`./handlers/${brand}.js`)
+const {  url:startUrls } = await import(`./brands/${brand}.js`)
 debugger
 
 const crawler = new PuppeteerCrawler({
