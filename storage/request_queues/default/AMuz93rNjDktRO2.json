@@ -1,0 +1,9 @@
+{
+	"id": "AMuz93rNjDktRO2",
+	"json": "{\"id\":\"AMuz93rNjDktRO2\",\"url\":\"https://crawlee.dev/docs/deployment/aws-cheerio\",\"uniqueKey\":\"https://crawlee.dev/docs/deployment/aws-cheerio\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"label\":\"detail\",\"__crawlee\":{\"skipNavigation\":false}}}",
+	"method": "GET",
+	"orderNo": 1709787081329,
+	"retryCount": 0,
+	"uniqueKey": "https://crawlee.dev/docs/deployment/aws-cheerio",
+	"url": "https://crawlee.dev/docs/deployment/aws-cheerio"
+}
