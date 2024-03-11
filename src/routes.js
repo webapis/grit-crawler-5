@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import { createPuppeteerRouter, Dataset } from 'crawlee';
-import handler from './handler.js'
+
 import cleanPrice from './utils/cleanPrice.js';
 dotenv.config({ silent: true });
 
@@ -41,7 +41,13 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
     log.info(`DETAIL ${title}`, { url: request.loadedUrl });
 
     await page.waitForSelector(dpSelector)
-    const data = await handler({ page, ...brandvar })
+debugger
+    const brandVar = await import(`./brands/${brand}.js`)
+    debugger
+    const handler= brandVar.default
+    debugger
+    const data = await handler({ page })
+    debugger
     try {
         const price1 = cleanPrice(data.price1)
         const priceInBasket = cleanPrice(data.priceInBasket)

@@ -1,6 +1,6 @@
-function mapPrice(price,data) {
+function mapPrice(price) {
 
-
+debugger
     try {
         const trimPrice = price.toString().replace('TL', '').replace('$', '').trim()//.replace(/[a-z]/gi, '') 
 
@@ -78,7 +78,7 @@ function mapPrice(price,data) {
         }
     } catch (error) {
 debugger
-        console.log('price----', data)
+  
         throw error
     }
 
