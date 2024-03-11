@@ -67,9 +67,9 @@ jobs:
       # - name: categorize data
       #   id: categorize
       #   run: node utils/categorizeData.js
-      # - name: upload data
-      #   id: algolia
-      #   run: node utils/importData.js
+      - name: upload data
+        id: algolia
+        run: node src/utils/importData.js
       # - name: update schema
       #   id: impdschemaata
       #   run: node typesense/createSchema.mjs
