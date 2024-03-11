@@ -15,8 +15,8 @@ debugger
         try {
             const image = Array.from(document.querySelectorAll('.image-2')).map(m=>m.src)
             const title = document.querySelector('.product-name').innerText
-            const price =document.querySelector('[itemprop="price"]') ? document.querySelector('[itemprop="price"]').getAttribute('content'):0
-            const color= document.querySelector('[itemprop="color"]').innerText
+            const price =0//document.querySelector('[itemprop="price"]') ? document.querySelector('[itemprop="price"]').getAttribute('content'):0
+            const color= ''//document.querySelector('[itemprop="color"]').innerText
             const link = document.URL
             return {
                 image,
