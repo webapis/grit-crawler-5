@@ -1,6 +1,6 @@
 
 const pSelector = '.product-list-inner-container'
-const dpSelector = '.product-detail-container'
+const dpSelector = '.zoomWindowContainer'
 const phref = '.megamenu__submenu a'
 const dphref = '.prod-card a'
 const url = ['https://www.yargici.com/']
@@ -16,7 +16,7 @@ export default async function adl ({page}){
             try {
 
                 const obj =JSON.parse(document.querySelector('[data-enhanced-productdetail]').getAttribute('data-enhanced-productdetail'))
-                const image = [document.querySelector('.zoomWindowContainer div').style.backgroundImage.replace('url(','').replace(')','').replaceAll('\"','') ]
+                const image = document.querySelector('.zoomWindowContainer div').style.backgroundImage.replace('url(','').replace(')','').replaceAll('\"','') 
                 const title = obj.name
                 const price =obj.price.replace('TL','')
                 const color=obj.variant
