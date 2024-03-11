@@ -1,4 +1,4 @@
-function mapPrice(price) {
+function mapPrice(price,data) {
 
 
     try {
@@ -78,7 +78,7 @@ function mapPrice(price) {
         }
     } catch (error) {
 debugger
-        console.log('price----', price)
+        console.log('price----', data)
         throw error
     }
 

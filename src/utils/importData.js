@@ -62,7 +62,7 @@ async function importLinkData({ data, brand }) {
 
 
 if (data.length > 0) {
-  await importLinkData({ data: data.map(m => { return { ...m, brand: marka, price1: mapPrice(m.price1) } }), brand: marka })
+  await importLinkData({ data: data.map(m => { return { ...m, brand: marka, price1: mapPrice(m.price1,m) } }), brand: marka })
 } else {
   throw 'No Items found to upload'
 }

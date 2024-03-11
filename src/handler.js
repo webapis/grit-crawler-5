@@ -6,8 +6,8 @@ export default async function handler({ page, title, price1, priceInBasket, pric
         try {
             const image = _imgSrc ? Array.from(document.querySelectorAll(_image)).map((m) => m.getAttribute(_imgSrc)).filter(f => f) : null
             const image2 = _imgBgr ? Array.from(document.querySelectorAll(_image)).map((m) => m.style.backgroundImage).filter(f => f) : null
-            const title = document.querySelector(_title).innerText.replaceAll('\n', '').trim().replace('TL', '')
-            const price1 = document.querySelector(_price1).innerText
+            const title = document.querySelector(_title).innerText.replaceAll('\n', '')
+            const price1 = document.querySelector(_price1).innerText.trim().replace('TL', '')
             const priceInBasket = (_priceInBasket && document.querySelector(_priceInBasket)) ? document.querySelector(_priceInBasket).innerText : 0
             const color = _color ? document.querySelector(_color).innerText : ''
             const link = document.URL
