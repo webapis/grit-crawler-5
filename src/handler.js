@@ -27,7 +27,7 @@ export default async function handler({ page, title, price1, priceInBasket, pric
     }, title, price1, priceInBasket, price3, image, imgSrc, imgBgr, color)
 
 
-    return { ...data, image2: imgBgr ? data.image2.map(d => extractBackgroundImage(d.image2)) : null, }
+    return { ...data}
 
 
 
