@@ -1,9 +1,10 @@
 import { createRequire } from 'module';
-
+import { Dataset } from 'crawlee';
 const require = createRequire(import.meta.url);
 require("dotenv").config();
 const algoliasearch = require("algoliasearch");
-
+const productsDataset = await Dataset.open();
+const { items: data } = await productsDataset.getData();
 const client = algoliasearch("7JF244QSZZ", process.env.ALGOLIAKEY);
 const marka = process.env.marka
 
