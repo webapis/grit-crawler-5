@@ -5,7 +5,7 @@ import { router } from './routes.js';
 import preNavigationHooks from './crawler-helper/preNavigationHooks.js';
 dotenv.config({ silent: true });
 debugger
-const brand = process.env.brand
+const brand = process.env.marka
 const {  url:startUrls } = await import(`./brands/${brand}.js`)
 debugger
 

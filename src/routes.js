@@ -4,7 +4,7 @@ import handler from './handler.js'
 import cleanPrice from './utils/cleanPrice.js';
 dotenv.config({ silent: true });
 
-const brand = process.env.brand
+const brand = process.env.marka
 const brandvar = await import(`./brands/${brand}.js`)
 const { pSelector, dpSelector, phref, dphref } = brandvar
 debugger
