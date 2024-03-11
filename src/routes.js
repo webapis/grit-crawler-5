@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { createPuppeteerRouter } from 'crawlee';
+import { createPuppeteerRouter,Dataset } from 'crawlee';
 import handler from './handler.js'
 import cleanPrice from './utils/cleanPrice.js';
 dotenv.config({ silent: true });
@@ -9,7 +9,7 @@ const brandvar = await import(`./brands/${brand}.js`)
 const { pSelector, dpSelector, phref, dphref } = brandvar
 debugger
 
-
+const productsDataset = await Dataset.open('products');
 export const router = createPuppeteerRouter();
 
 router.addDefaultHandler(async ({ enqueueLinks, log }) => {
@@ -47,7 +47,7 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
         ...data, price1,
         priceInBasket,
     }
-    await pushData(data);
+    await productsDataset.pushData(data);
 
 
 });

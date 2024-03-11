@@ -1,10 +1,13 @@
 import { createRequire } from 'module';
 import { Dataset } from 'crawlee';
+import mapPrice from './mapPrice.js';
 const require = createRequire(import.meta.url);
 require("dotenv").config();
 const algoliasearch = require("algoliasearch");
-const productsDataset = await Dataset.open();
+const productsDataset = await Dataset.open('products');
+debugger
 const { items: data } = await productsDataset.getData();
+debugger
 const client = algoliasearch("7JF244QSZZ", process.env.ALGOLIAKEY);
 const marka = process.env.marka
 
@@ -25,24 +28,24 @@ const marka = process.env.marka
 //   });
 // }
 
-async function importLinkData({ data,brand }) {
+async function importLinkData({ data, brand }) {
   const linkIndex = client.initIndex("product");
-  
+
 
   let hits = [];
- const result = await linkIndex.browseObjects({
-  batch: batch => {
-    hits = hits.concat(batch);
-  },
-  attributesToRetrieve: ["objectID"],
-  query: brand
-})
-debugger
-const objectsToDelete = hits.map(m=>m.objectID)
-debugger
-await linkIndex.deleteObjects(objectsToDelete)
-debugger
-//  await setSettings(linkIndex);
+  const result = await linkIndex.browseObjects({
+    batch: batch => {
+      hits = hits.concat(batch);
+    },
+    attributesToRetrieve: ["objectID"],
+    query: brand
+  })
+  debugger
+  const objectsToDelete = hits.map(m => m.objectID)
+  debugger
+  await linkIndex.deleteObjects(objectsToDelete)
+  debugger
+  //  await setSettings(linkIndex);
   return new Promise((resolve, reject) => {
     try {
       linkIndex
@@ -58,9 +61,9 @@ debugger
 
 
 
-if(data.length>0){
-  await importLinkData({data:data.map(m=>{return {...m,brand:marka}}),brand:marka })
-}else{
+if (data.length > 0) {
+  await importLinkData({ data: data.map(m => { return { ...m, brand: marka, price1: mapPrice(m.price1) } }), brand: marka })
+} else {
   throw 'No Items found to upload'
 }
 

@@ -11,7 +11,8 @@
     },
     "scripts": {
         "start": "node src/main.js",
-        "test": "echo \"Error: oops, the actor has no tests yet, sad!\" && exit 1"
+        "test": "echo \"Error: oops, the actor has no tests yet, sad!\" && exit 1",
+        "upload": "node src/utils/importData.js"
     },
     "author": "It's not you it's me",
     "license": "ISC"
