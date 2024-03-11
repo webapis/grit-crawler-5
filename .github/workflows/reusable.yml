@@ -64,12 +64,12 @@ jobs:
       - name: aggregation step
         id: collection
         run: node src/main.js
-      - name: categorize data
-        id: categorize
-        run: node utils/categorizeData.js
-      - name: upload data
-        id: algolia
-        run: node utils/importData.js
+      # - name: categorize data
+      #   id: categorize
+      #   run: node utils/categorizeData.js
+      # - name: upload data
+      #   id: algolia
+      #   run: node utils/importData.js
       # - name: update schema
       #   id: impdschemaata
       #   run: node typesense/createSchema.mjs
