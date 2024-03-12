@@ -43,7 +43,7 @@ debugger
     // });
 
     await productsDataset.pushData(data);
-
+debugger
 });
 // router.addHandler('detail', async ({ request, page, log, pushData }) => {
 //     const title = await page.title();
