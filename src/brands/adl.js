@@ -1,30 +1,30 @@
 
-const pSelector = ''
-const dpSelector = ''
-const phref = 'nav w-generic-link a'
-const dphref = ''
-const url = ['https://www.wcollection.com.tr/kadin-modasi']
+const pSelector = '.products__items'
+
+const phref = '.navigation a'
+
+const url = ['https://www.adl.com.tr/']
 
 
-export { pSelector, dpSelector, phref, dphref, url }
+export { pSelector, phref, url }
 
 
 export default async function wcollection({ page }) {
     debugger
-    const data = await page.$$eval('wcollection-list-item', (documents) => {
+    const data = await page.$$eval('.product-item', (documents) => {
 
         return documents.map(document => {
             return {
-                image: Array.from(document.querySelectorAll('swiper-slide img')).map(m => m.src),
-                title: document.querySelector('.product-title h3').innerText,
-                price: document.querySelector('.product-item__price--retail').innerText.replace('₺', ''),
-                link: document.querySelectorAll('a')[1].href
+                image: Array.from(document.querySelectorAll('img')).map(m => m.getAttribute('data-src')).filter(f => f),
+              title: document.querySelector('.product-item__name').innerText,
+                price: document.querySelector('.price__new').innerText.replace('TL', ''),
+                link: document.querySelector('.product-item a').href
             }
         })
 
     })
 
-debugger
+    debugger
     return data
 
 }
