@@ -1,36 +1,33 @@
 
-const pSelector = '#ListPage'
-const dpSelector = '.product-detail'
-const phref = '.navigation a'
-const dphref = '.product-item__body a'
-const url = ['https://www.adl.com.tr/']
+const pSelector = ''
+const dpSelector = ''
+const phref = 'nav w-generic-link a'
+const dphref = ''
+const url = ['https://www.wcollection.com.tr/kadin-modasi']
 
 
 export { pSelector, dpSelector, phref, dphref, url }
 
 
-export default async function adl ({page}){
-debugger
-    const data = await page.evaluate(() => {
-        try {
-            const image = [document.querySelector('.images [data-src]').getAttribute('data-src')]
-            const title = document.querySelector('.texts__product-name').innerText
-            const price = document.querySelector('.price__new').innerText.trim().replace('TL','')
-            const color=document.querySelector('[data-variant-name] [data-variant-value]').getAttribute('data-variant-value')
-            const link = document.URL
+export default async function wcollection({ page }) {
+    debugger
+    const data = await page.$$eval('wcollection-list-item', (documents) => {
+
+        return documents.map(document => {
             return {
-                image,
-                title,
-                price,
-                color,
-                link
+                image: Array.from(document.querySelectorAll('swiper-slide img')).map(m => m.src),
+                title: document.querySelector('.product-title h3').innerText,
+                price: document.querySelector('.product-item__price--retail').innerText.replace('₺', ''),
+                link: document.querySelectorAll('a')[1].href
             }
-        } catch (error) {
-            return { error: error.toString(), content: document.innerHTML }
-        }
+        })
+
     })
 
-
-    return { ...data}
+debugger
+    return data
 
 }
+
+
+
