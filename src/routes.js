@@ -17,7 +17,7 @@ router.addDefaultHandler(async ({ enqueueLinks, log }) => {
     await enqueueLinks({
         selector: phref,
         label: 'list',
-        limit: 3,
+        limit: 10,
     });
 
 
@@ -40,6 +40,7 @@ debugger
     //     selector: dphref,
     //     label: 'detail',
     // });
+
     await productsDataset.pushData(data);
 
 });
