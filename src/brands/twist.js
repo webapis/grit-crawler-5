@@ -15,7 +15,7 @@ export default async function twist({ page }) {
 
         return documents.map(document => {
             return {
-                image: Array.from(document.querySelectorAll('[data-large]')).map(m=>m.getAttribute('data-large')),
+                image:[document.querySelector('[data-image-src]').getAttribute('data-image-src')],// Array.from(document.querySelectorAll('[data-large]')).map(m=>m.getAttribute('data-large')),
                 title: document.querySelector('.prd-name').innerText,
                 price: document.querySelector('.urunListe_satisFiyat').innerText.replace('₺',''),
                 link: document.querySelector('.prd-lnk').href
