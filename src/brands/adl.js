@@ -9,7 +9,7 @@ const url = ['https://www.adl.com.tr/']
 export { pSelector, phref, url }
 
 
-export default async function wcollection({ page }) {
+export default async function adl({ page }) {
     debugger
     const data = await page.$$eval('.product-item', (documents) => {
 
