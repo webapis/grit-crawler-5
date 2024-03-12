@@ -18,7 +18,8 @@ export default async function adl({ page }) {
                 image:document.querySelector('.detailUrl img').getAttribute('data-src')?[document.querySelector('.detailUrl img').getAttribute('data-src')]:[document.querySelector('.detailUrl img').src],
                 title: document.querySelector('.productName.detailUrl a').innerText,
                 price: document.querySelector('.discountPrice').innerText.replace('TL',''),
-                link: document.querySelector('.productName.detailUrl a').href
+                link: document.querySelector('.productName.detailUrl a').href,
+                currency:'TL'
             }
         })
 

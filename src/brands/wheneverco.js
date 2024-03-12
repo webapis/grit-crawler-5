@@ -18,7 +18,8 @@ export default async function wheneverco({ page }) {
                 image: ['https:'+document.querySelector('.product-image img').getAttribute('data-lazysrc')],
                 title: document.querySelector('.product-name').innerText,
                 price: document.querySelector('.price').innerText,
-                link: document.querySelector('.product-image a').href
+                link: document.querySelector('.product-image a').href,
+                currency:'TL'
             }
         })
 

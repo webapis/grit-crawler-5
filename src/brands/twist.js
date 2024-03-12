@@ -18,7 +18,8 @@ export default async function twist({ page }) {
                 image:[document.querySelector('[data-image-src]').getAttribute('data-image-src')],// Array.from(document.querySelectorAll('[data-large]')).map(m=>m.getAttribute('data-large')),
                 title: document.querySelector('.prd-name').innerText,
                 price: document.querySelector('.urunListe_satisFiyat').innerText.replace('₺',''),
-                link: document.querySelector('.prd-lnk').href
+                link: document.querySelector('.prd-lnk').href,
+                currency:'TL'
             }
         })
 

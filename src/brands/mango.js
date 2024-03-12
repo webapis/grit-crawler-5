@@ -18,7 +18,8 @@ export default async function wcollection({ page }) {
                 image: [document.querySelector('img').src],
                  title: document.querySelector('.layout-row .md12.text-body-m').innerText,
                 price: document.querySelector('[data-testid="currentPrice"] span span').innerText.replace('TL', ''),
-                link: document.querySelector('a').href
+                link: document.querySelector('a').href,
+                currency:'TL'
             }
         })
 
