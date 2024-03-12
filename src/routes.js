@@ -27,40 +27,47 @@ router.addDefaultHandler(async ({ enqueueLinks, log }) => {
 router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks }) => {
     const title = await page.title();
     log.info(`LIST ${title}`, { url: request.loadedUrl });
+    debugger
     await page.waitForSelector(pSelector)
 
-    await enqueueLinks({
-        selector: dphref,
-        label: 'detail',
-    });
-
-
-});
-router.addHandler('detail', async ({ request, page, log, pushData }) => {
-    const title = await page.title();
-    log.info(`DETAIL ${title}`, { url: request.loadedUrl });
-
-    await page.waitForSelector(dpSelector)
-debugger
     const brandVar = await import(`./brands/${brand}.js`)
-    debugger
-    const handler= brandVar.default
-    debugger
-    const data = await handler({ page })
-    debugger
-    try {
-        const price1 = cleanPrice(data.price1)
-        const priceInBasket = cleanPrice(data.priceInBasket)
-        const cleanedPrice = {
-            ...data, price1,
-            priceInBasket,
-        }
-        await productsDataset.pushData(data);
-    } catch (error) {
-        console.log('error', data)
-        throw error
-    }
-
-
+        debugger
+        const handler= brandVar.default
+        debugger
+        const data = await handler({ page })
+debugger
+    // await enqueueLinks({
+    //     selector: dphref,
+    //     label: 'detail',
+    // });
+    await productsDataset.pushData(data);
 
 });
+// router.addHandler('detail', async ({ request, page, log, pushData }) => {
+//     const title = await page.title();
+//     log.info(`DETAIL ${title}`, { url: request.loadedUrl });
+
+//     await page.waitForSelector(dpSelector)
+// debugger
+//     const brandVar = await import(`./brands/${brand}.js`)
+//     debugger
+//     const handler= brandVar.default
+//     debugger
+//     const data = await handler({ page })
+//     debugger
+//     try {
+//         const price1 = cleanPrice(data.price1)
+//         const priceInBasket = cleanPrice(data.priceInBasket)
+//         const cleanedPrice = {
+//             ...data, price1,
+//             priceInBasket,
+//         }
+//         await productsDataset.pushData(data);
+//     } catch (error) {
+//         console.log('error', data)
+//         throw error
+//     }
+
+
+
+// });
