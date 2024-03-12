@@ -1,39 +1,32 @@
 
-const pSelector = '.product-list-inner-container'
-const dpSelector = '.product-detail-container'
-const phref = '.megamenu__submenu a'
-const dphref = '.prod-card a'
+const pSelector = '.product-list-container'
+
+const phref = '.sub-menu-column a'
+
 const url = ['https://www.yargici.com/']
 
 
-export { pSelector, dpSelector, phref, dphref, url }
+export { pSelector, phref, url }
 
 
-
-export default async function yargici ({page}){
+export default async function yargici({ page }) {
     debugger
-        const data = await page.evaluate(() => {
-            try {
+    const data = await page.$$eval('[data-enhanced-impressions]', (documents) => {
 
-                const obj =JSON.parse(document.querySelector('[data-enhanced-productdetail]').getAttribute('data-enhanced-productdetail'))
-                const image = Array.from(document.querySelectorAll('img.thumb-image')).map(m=>m.src.replace('/100/100/','/500/500/'))
-                const title = obj.name
-                const price =obj.price.replace('TL','')
-                const color=obj.variant
-                const link = document.URL
-                return {
-                    image,
-                    title,
-                    price,
-                    color,
-                    link
-                }
-            } catch (error) {
-                return { error: error.toString(), content: document.innerHTML }
+        return documents.map(document => {
+            const obj = JSON.parse(document.getAttribute('data-enhanced-impressions'))
+            return {
+                image: [document.querySelector('img').getAttribute('data-src')],
+                title: obj.name,
+                price: obj.price,
+                color:obj.variant,
+                link: document.querySelector('a').href
             }
         })
-    
-    
-        return { ...data}
-    
-    }
+
+    })
+
+    debugger
+    return data
+
+}
