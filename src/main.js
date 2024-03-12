@@ -10,7 +10,7 @@ const {  url:startUrls } = await import(`./brands/${brand}.js`)
 debugger
 
 const crawler = new PuppeteerCrawler({
-    headless:true,
+    //headless:false,
     // proxyConfiguration: new ProxyConfiguration({ proxyUrls: ['...'] }),
     requestHandler: router,
     // Comment this option to scrape the full website.

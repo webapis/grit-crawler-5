@@ -1,9 +1,9 @@
 
-export default async function autoScroll(page) {
+export default async function autoScroll(page,scrollSpeed) {
     page.on("console", (message) => {
       console.log("Message from Puppeteer page:", message.text());
     });
-    await page.evaluate(async () => {
+    await page.evaluate(async (_scrollSpeed) => {
       await new Promise((resolve, reject) => {
         var totalHeight = 0;
         var distance = 100;
@@ -29,8 +29,8 @@ export default async function autoScroll(page) {
           } else {
             inc = 0;
           }
-        }, 250);
+        }, _scrollSpeed);
       });
-    });
+    },scrollSpeed);
   }
 

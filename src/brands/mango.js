@@ -9,7 +9,7 @@ export { pSelector, phref, url }
 
 export default async function wcollection({ page }) {
 
-    await autoScroll(page)
+    await autoScroll(page,50)
     debugger
     const data = await page.$$eval('[data-testid="plp.product.figure"]', (documents) => {
 
