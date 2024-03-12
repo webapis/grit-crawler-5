@@ -1,36 +1,32 @@
-
-const pSelector = '#mainDivBody'
-const dpSelector = '.product-detail-main'
-const phref = '.vsv-lists a'
-const dphref = '[data-testid="plp.product.figure"] a'
+import  autoScroll  from "../utils/autoscroll.js"
+const pSelector = '#catalogProductsList'
+const phref = 'a.vsv-link'
 const url = ['https://shop.mango.com/tr/kadin']
 
 
-export { pSelector, dpSelector, phref, dphref, url }
+export { pSelector, phref, url }
 
 
-export default async function mango ({page}){
-debugger
-    const data = await page.evaluate(() => {
-        try {
-            const image = Array.from(document.querySelectorAll('.image-2')).map(m=>m.src)
-            const title = document.querySelector('.product-name').innerText
-            const price =0//document.querySelector('[itemprop="price"]') ? document.querySelector('[itemprop="price"]').getAttribute('content'):0
-            const color= ''//document.querySelector('[itemprop="color"]').innerText
-            const link = document.URL
+export default async function wcollection({ page }) {
+
+    await autoScroll(page)
+    debugger
+    const data = await page.$$eval('[data-testid="plp.product.figure"]', (documents) => {
+
+        return documents.map(document => {
             return {
-                image,
-                title,
-                price,
-                color,
-                link
+                image: [document.querySelector('img').src],
+                 title: document.querySelector('.layout-row .md12.text-body-m').innerText,
+                price: document.querySelector('[data-testid="currentPrice"] span span').innerText.replace('TL', ''),
+                link: document.querySelector('a').href
             }
-        } catch (error) {
-            return { error: error.toString(), content: document.innerHTML }
-        }
+        })
+
     })
 
-
-    return { ...data}
+    debugger
+    return data
 
 }
+
+
