@@ -63,10 +63,15 @@ async function importLinkData({ data, brand }) {
 
 
 if (data.length > 0) {
-  await importLinkData({ data: data.map(m => { return { ...m, brand: marka } }), brand: marka })
+  await importLinkData({ data: removeDuplicates(data,'link').map(m => { return { ...m, brand: marka } }), brand: marka })
 } else {
   throw 'No Items found to upload'
 }
 
 
 
+function removeDuplicates(array, key) {
+  return array.filter((item, index, self) =>
+      index === self.findIndex(obj => obj[key] === item[key])
+  );
+}
