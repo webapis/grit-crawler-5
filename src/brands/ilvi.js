@@ -3,7 +3,7 @@ const pSelector = '#divIcerik'
 
 const phref = '.AcilirMenu a'
 
-const url = ['https://www.ilvi.com/']
+const url = ['https://www.ilvi.com/bayan-ayakkabi-modelleri','https://www.ilvi.com/erkek-ayakkabi-modelleri','https://www.ilvi.com/giyim-koleksiyonu']
 
 
 export { pSelector, phref, url }
