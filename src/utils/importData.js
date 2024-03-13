@@ -63,15 +63,38 @@ async function importLinkData({ data, brand }) {
 
 
 if (data.length > 0) {
-  await importLinkData({ data: removeDuplicates(data,'link').map(m => { return { ...m, brand: marka } }), brand: marka })
+  await importLinkData({ data: removeDuplicatesAndCollectTitles(data,'link').map(m => { return { ...m, brand: marka } }), brand: marka })
 } else {
   throw 'No Items found to upload'
 }
 
 
 
-function removeDuplicates(array, key) {
-  return array.filter((item, index, self) =>
-      index === self.findIndex(obj => obj[key] === item[key])
-  );
+// function removeDuplicates(array, key) {
+//   return array.filter((item, index, self) =>
+//       index === self.findIndex(obj => obj[key] === item[key])
+//   );
+// }
+function removeDuplicatesAndCollectTitles(array, key) {
+  const uniqueObjects = [];
+  const duplicateTitles = {};
+
+  array.forEach((item) => {
+      const index = uniqueObjects.findIndex((obj) => obj[key] === item[key]);
+
+      if (index === -1) {
+          uniqueObjects.push(item);
+      } else {
+          if (!duplicateTitles[item[key]]) {
+              duplicateTitles[item[key]] = [uniqueObjects[index].pageTitle];
+          }
+
+          duplicateTitles[item[key]].push(item.pageTitle);
+      }
+  });
+
+  return uniqueObjects.map((item) => {
+      const titles = duplicateTitles[item[key]];
+      return titles ? { ...item, duplicateTitles: titles } : item;
+  });
 }
