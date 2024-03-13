@@ -16,7 +16,7 @@ export default async function dahliabianca({ page }) {
 
         return documents.map(document => {
             return {
-                image: document.querySelector('.product-item img').getAttribute('data-src'),
+                image: [document.querySelector('.product-item img').getAttribute('data-src')],
                 title: document.querySelector('.product-title').innerText,
                 price: document.querySelector('.actual-price').innerText.replace('$',''),
                 link: document.querySelector('.product-title a').href,
