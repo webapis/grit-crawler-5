@@ -1,7 +1,7 @@
 
 const pSelector = '#divIcerik'
 
-const phref = '.AcilirMenu a'
+const phref = '.ulVar a'
 
 const url = ['https://www.ilvi.com/']
 
@@ -17,9 +17,9 @@ export default async function adl({ page }) {
             return {
                 image: [document.querySelector('[data-original]').getAttribute('data-original')],
                 title: document.querySelector('.productName.detailUrl a').innerText,
-                price: document.querySelector('.discountPrice span').innerText.replace('₺',''),
+                price: document.querySelector('.discountPrice span').innerText.replace('$',''),
                 link: document.querySelector('.productName.detailUrl a').href,
-                currency:'TL'
+                currency:'USD'
             }
         })
 
