@@ -1,12 +1,13 @@
 import { createRequire } from 'module';
-import { Dataset } from 'crawlee';
+
 import mapPrice from './mapPrice.js';
+
 const require = createRequire(import.meta.url);
 require("dotenv").config();
 const algoliasearch = require("algoliasearch");
-const productsDataset = await Dataset.open('products');
+
 debugger
-const { items: data } = await productsDataset.getData();
+const data =require('../../data.json')
 debugger
 const client = algoliasearch("7JF244QSZZ", process.env.ALGOLIAKEY);
 const marka = process.env.marka
