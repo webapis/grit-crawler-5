@@ -17,7 +17,7 @@ export default async function beymenclub({ page }) {
             return {
                 image: [document.querySelector('.m-productCard__photo a img').getAttribute('data-src').replace('/339/','/500/') ],
                 title: document.querySelector('.m-productCard__desc').innerText,
-                price: document.querySelector('.m-productCard__newPrice') ? document.querySelector('.m-productCard__newPrice').innerText : document.querySelector('.m-productCard__lastPrice').childNodes[1].textContent.replace('TL', ''),
+                price: document.querySelector('.m-productCard__newPrice') ? document.querySelector('.m-productCard__newPrice').innerText.replace('TL','') : document.querySelector('.m-productCard__lastPrice').childNodes[1].textContent.replace('TL', ''),
                 link: document.querySelector('.m-productCard__photo a').href,
                 currency: 'TL'
             }
