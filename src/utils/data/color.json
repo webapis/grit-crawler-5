@@ -1,0 +1,116 @@
+[
+    {
+        "keywords": [
+            "beyaz"
+        ],
+        "name": "beyaz",
+        "group":"color"
+    },
+    {
+        "keywords": [
+            "siyah"
+        ],
+        "name": "siyah",
+        "group":"color"
+    },
+    {
+        "keywords": [
+            "kahverengi"
+        ],
+        "name": "kahverengi",
+        "group":"color"
+    },
+    {
+        "keywords": [
+            "bej"
+        ],
+        "name": "bej",
+        "group":"color"
+    },
+    {
+        "keywords": [
+            "mavi"
+        ],
+        "name": "mavi",
+        "group":"color"
+    }
+    ,
+    {
+        "keywords": [
+            "camel"
+        ],
+        "name": "camel",
+        "group":"color"
+    },
+    {
+        "keywords": [
+            "tarcin"
+        ],
+        "name": "tarçın",
+        "group":"color"
+    },
+    {
+        "keywords": [
+            "fuşya"
+        ],
+        "name": "fuşya",
+        "group":"color"
+    }
+    ,
+    {
+        "keywords": [
+            "mor"
+        ],
+        "name": "mor",
+        "group":"color"
+    }  ,
+    {
+        "keywords": [
+            "haki"
+        ],
+        "name": "haki",
+        "group":"color"
+    } ,
+    {
+        "keywords": [
+            "yeşil"
+        ],
+        "name": "yeşil",
+        "group":"color"
+    },
+    {
+        "keywords": [
+            "ekru"
+        ],
+        "name": "ekru",
+        "group":"color"
+    },
+    {
+        "keywords": [
+            "bordo"
+        ],
+        "name": "bordo",
+        "group":"color"
+    },
+    {
+        "keywords": [
+            "taba"
+        ],
+        "name": "taba",
+        "group":"color"
+    },
+    {
+        "keywords": [
+            "taş"
+        ],
+        "name": "taş",
+        "group":"color"
+    },
+    {
+        "keywords": [
+            "silver",  "gümüş"
+        ],
+        "name": "gümüş",
+        "group":"color"
+    }
+]

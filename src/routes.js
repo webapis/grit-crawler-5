@@ -12,15 +12,15 @@ debugger
 const productsDataset = await Dataset.open('products');
 export const router = createPuppeteerRouter();
 
-router.addDefaultHandler(async ({ enqueueLinks, log,page }) => {
+router.addDefaultHandler(async ({ enqueueLinks, log, page }) => {
     log.info(`enqueueing new URLs`);
     await page.waitForSelector(phref)
- const result =   await enqueueLinks({
+    const result = await enqueueLinks({
         selector: phref,
         label: 'list',
         limit: 3,
     });
-debugger;
+    debugger;
 
 });
 
@@ -32,18 +32,19 @@ router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks })
     await page.waitForSelector(pSelector)
 
     const brandVar = await import(`./brands/${brand}.js`)
-        debugger
-        const handler= brandVar.default
-        debugger
-        const data = await handler({ page })
-debugger
+    debugger
+    const handler = brandVar.default
+    debugger
+    const data = await handler({ page })
+    const mapPageTitle = data.map(m => { return { ...m, pageTitle: title } })
+    debugger
     // await enqueueLinks({
     //     selector: dphref,
     //     label: 'detail',
     // });
 
-    await productsDataset.pushData(data);
-debugger
+    await productsDataset.pushData(mapPageTitle);
+    debugger
 });
 // router.addHandler('detail', async ({ request, page, log, pushData }) => {
 //     const title = await page.title();

@@ -1,0 +1,50 @@
+[
+    {
+        "keywords": [
+            "kaban"
+        ],
+        "name": "kaban",
+        "group":"dış giyim"
+    },
+    {
+        "keywords": [
+            "mont"
+        ],
+        "name": "mont",
+        "group":"dış giyim"
+    },
+    {
+        "keywords": [
+            "palto"
+        ],
+        "name": "palto",
+        "group":"dış giyim"
+    }
+    ,   {
+        "keywords": [
+            "pardösü"
+        ],
+        "name": "pardösü",
+        "group":"dış giyim"
+    }
+    ,   {
+        "keywords": [
+            "bazer"
+        ],
+        "name": "blazer",
+        "group":"dış giyim"
+    },
+      {
+        "keywords": [
+            "ceket"
+        ],
+        "name": "ceket",
+        "group":"dış giyim"
+    } ,   {
+        "keywords": [
+            "yelek"
+        ],
+        "name": "yelek",
+        "group":"dış giyim"
+    }
+]

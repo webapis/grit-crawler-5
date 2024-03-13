@@ -1,0 +1,54 @@
+[
+    {
+        "keywords": [
+            "bot"
+        ],
+        "name": "bot",
+        "group":"ayakkabı"
+    },
+    {
+        "keywords": [
+            "çizme"
+        ],
+        "name": "çizme",
+        "group":"ayakkabı"
+    },
+    {
+        "keywords": [
+            "sneaker"
+        ],
+        "name": "sneaker",
+        "group":"ayakkabı"
+    },
+    {
+        "keywords": [
+            "stiletto"
+        ],
+        "name": "stiletto",
+        "group":"ayakkabı"
+    },
+    {
+        "keywords": [
+            "deri ayakkabı"
+        ],
+        "name": "deri ayakkabı",
+        "group":"ayakkabı"
+    }
+    ,
+    {
+        "keywords": [
+            " loafer"
+        ],
+        "name": "loafer",
+        "group":"ayakkabı"
+    } ,
+    {
+        "keywords": [
+            " babet"
+        ],
+        "name": "babet",
+        "group":"ayakkabı"
+    }
+    
+   
+]

@@ -1,0 +1,61 @@
+[
+    {
+        "keywords": [
+            "elbise"
+        ],
+        "name": "elbise",
+        "group":"üst giyim"
+    },
+    {
+        "keywords": [
+            "abiye elbise"
+        ],
+        "name": "abiye elbise",
+        "group":"üst giyim"
+    },
+    {
+        "keywords": [
+            "sweatshirt"
+        ],
+        "name": "Sweatshirt",
+        "group":"üst giyim"
+    }
+    ,   {
+        "keywords": [
+            "t-Shirt"
+        ],
+        "name": "T-Shirt",
+        "group":"üst giyim"
+    },   {
+        "keywords": [
+            "atlet"
+        ],
+        "name": "atlet",
+        "group":"üst giyim"
+    },   {
+        "keywords": [
+            "gömlek"
+        ],
+        "name": "gömlek",
+        "group":"üst giyim"
+    },
+    {
+        "keywords": [
+            "bluz"
+        ],
+        "name": "bluz",
+        "group":"üst giyim"
+    } ,  {
+        "keywords": [
+            "kazak"
+        ],
+        "name": "kazak",
+        "group":"üst giyim"
+    },   {
+        "keywords": [
+            "hırka"
+        ],
+        "name": "hırka",
+        "group":"üst giyim"
+    }
+]

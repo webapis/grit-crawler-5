@@ -12,7 +12,8 @@
     "scripts": {
         "start": "node src/main.js",
         "test": "echo \"Error: oops, the actor has no tests yet, sad!\" && exit 1",
-        "upload": "node src/utils/importData.js"
+        "upload": "node src/utils/importData.js",
+        "categorize": "node src/utils/categorizeData.js"
     },
     "author": "It's not you it's me",
     "license": "ISC"

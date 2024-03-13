@@ -1,0 +1,78 @@
+[
+    {
+        "keywords": [
+            "erkek"
+        ],
+        "name": "erkek"
+    },
+    {
+        "keywords": [
+            "kadin",
+            "kadın",
+            "gelin",
+            "abiye",
+            "stiletto",
+            "çizme",
+            "topuklu",
+            "midi",
+            "etek",
+            "mom fit"
+            
+        ],
+        "name": "kadın"
+    },
+    {
+        "keywords": [
+            "kız çocuk",
+            "kiz cocuk"
+        ],
+        "name": "kız çocuk"
+    },
+    {
+        "keywords": [
+            "genç kız",
+            "genc kiz"
+        ],
+        "name": "genç kız"
+    },
+    {
+        "keywords": [
+            "genç kadın",
+            "genc kadin"
+        ],
+        "name": "genç kadın"
+    },
+    {
+        "keywords": [
+            "erkek çocuk",
+            "erkek cocuk"
+        ],
+        "name": "erkek çocuk"
+    },
+    {
+        "keywords": [
+            "çocuk",
+            "cocuk"
+        ],
+        "name": "çocuk"
+    },
+    {
+        "keywords": [
+            "bebek"
+        ],
+        "name": "bebek"
+    },
+    {
+        "keywords": [
+            "erkek bebek"
+        ],
+        "name": "erkek bebek"
+    },
+    {
+        "keywords": [
+            "kız bebek",
+            "kiz bebek"
+        ],
+        "name": "kız bebek"
+    }
+]
