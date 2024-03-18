@@ -35,7 +35,7 @@ router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks })
     debugger
     const handler = brandVar.default
     debugger
-    const data = await handler({ page })
+    const data = await handler({ page,enqueueLinks })
     const mapPageTitle = data.map(m => { return { ...m, pageTitle: title } })
     debugger
     // await enqueueLinks({

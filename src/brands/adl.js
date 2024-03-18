@@ -9,8 +9,13 @@ const url = ['https://www.adl.com.tr/']
 export { pSelector, phref, url }
 
 
-export default async function adl({ page }) {
+export default async function adl({ page,enqueueLinks }) {
     debugger
+
+        await enqueueLinks({
+        selector: '[href^="?category_ids=696&sorter=newcomers&page="]',
+      
+    });
     const data = await page.$$eval('.product-item', (documents) => {
 
         return documents.map(document => {
