@@ -9,14 +9,15 @@ const url = ['https://www.adl.com.tr/']
 export { pSelector, phref, url }
 
 
-export default async function adl({ page, enqueueLinks }) {
+export default async function adl({ page, enqueueLinks,request,log }) {
     debugger
-
-    await enqueueLinks({
-        selector: '[href^="?category_ids=696&sorter=newcomers&page="]',
+    const title = await page.title();
+    log.info(`COLLECT ${title}`, { url: request.loadedUrl });
+ await enqueueLinks({
+        selector:'a.pagination__item.js-pagination-item',
         label: 'list',
     });
-
+debugger
     const data = await page.$$eval('.product-item', (documents) => {
 
         return documents.map(document => {
