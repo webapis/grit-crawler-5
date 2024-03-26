@@ -8,7 +8,7 @@ jobs:
   kadin_job:
     uses: ./.github/workflows/reusable.yml
     with:
-      GENDER: all
+      GENDER: sponsor
       maxconcurrency: '5'
       WEBSITE: 'biraradamoda'
       marka: 'ekolonline'
