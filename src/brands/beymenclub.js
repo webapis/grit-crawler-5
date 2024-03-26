@@ -11,7 +11,7 @@ export { pSelector, phref, url }
 
 export default async function beymenclub({ page,addRequests }) {
 
-       await getUrls(page,addRequests)
+     //  await getUrls(page,addRequests)
     debugger
     const data = await page.$$eval('.o-productList__item', (documents) => {
 
