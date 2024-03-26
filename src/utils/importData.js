@@ -13,7 +13,7 @@ debugger
 const marka = process.env.marka
 
 const dataToUpload = removeDuplicatesAndCollectTitles(data, 'link').map(m => { return { ...m, marka } })
-
+debugger
 
 if (data.length > 0) {
   await uploadCollection({ fileName: `${marka}`, data: dataToUpload, gender: 'sponsor', marka })

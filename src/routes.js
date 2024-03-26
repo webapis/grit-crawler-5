@@ -25,7 +25,7 @@ router.addDefaultHandler(async ({ enqueueLinks, log, page }) => {
 });
 
 
-router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks }) => {
+router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks, addRequests }) => {
     const title = await page.title();
     log.info(`LIST ${title}`, { url: request.loadedUrl });
     debugger
@@ -35,7 +35,7 @@ router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks })
     debugger
     const handler = brandVar.default
     debugger
-    const data = await handler({ page,enqueueLinks,request,log })
+    const data = await handler({ page, enqueueLinks, request, log, addRequests })
     const mapPageTitle = data.map(m => { return { ...m, pageTitle: title } })
     debugger
     // await enqueueLinks({
