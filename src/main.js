@@ -11,7 +11,8 @@ debugger
 
 const crawler = new PuppeteerCrawler({
     //headless:false,
-    // proxyConfiguration: new ProxyConfiguration({ proxyUrls: ['...'] }),
+    // proxyConfiguration: new ProxyConfiguration({ proxyUrls: ['...'] })
+    requestHandlerTimeoutSecs: 3600,
     requestHandler: router,
     // Comment this option to scrape the full website.
   //  maxRequestsPerCrawl: 0,

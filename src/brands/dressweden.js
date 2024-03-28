@@ -1,7 +1,7 @@
 import autoScroll from "../utils/autoscroll.js"
-const pSelector = '[class^="product-list_container"]'
+const pSelector = '.category__list__main'
 
-const phref = '[class^="navbar-item_content"] a'
+const phref = '.nav-links a'
 
 const url = ['https://dressweden.com/tasarim-kadin-giyim-modelleri']
 
@@ -10,16 +10,16 @@ export { pSelector, phref, url }
 
 
 export default async function dressweden({ page }) {
-    await autoScroll(page,250)
+    await autoScroll(page,100)
     debugger
-    const data = await page.$$eval('[class^="product-list_productContainerFourthLayout"]', (documents) => {
+    const data = await page.$$eval('[data-id]', (documents) => {
 
         return documents.map(document => {
             return {
-                image: [document.querySelector('[class^="product-card_image__"]').src],
-                title: document.querySelector('[class^="product-card_name"]').innerText,
-                price: document.querySelector('[class^="product-card_price__"]').innerText.replace('₺',''),
-                link: document.querySelector('[class^="product-card_name"]').href,
+                image: [document.querySelector('.category-products-image').getAttribute('srcset').split(',')[10].trim().split(' ')[0]],
+                title: document.querySelector('h2.product-name').innerText,
+                price: Array.from(document.querySelector('.discount-price').querySelectorAll('span')).reverse()[0].innerText.replace('₺','').trim(),
+                link: document.querySelector('a').href,
                 currency:'TL'
             }
         })
