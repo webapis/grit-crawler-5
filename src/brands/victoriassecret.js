@@ -1,4 +1,4 @@
-
+import autoscroll from '../utils/autoscroll.js'
 const pSelector = '#divIcerik'
 
 const phref = '.nav-item-link'
@@ -11,6 +11,7 @@ export { pSelector, phref, url }
 
 export default async function adl({ page }) {
     debugger
+    await autoscroll(page,150)
     const data = await page.$$eval('.productItem', (documents) => {
 
         return documents.map(document => {
