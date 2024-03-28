@@ -10,6 +10,10 @@ const {  url:startUrls } = await import(`./brands/${brand}.js`)
 debugger
 
 const crawler = new PuppeteerCrawler({
+  launchContext:{
+    useChrome: process.env.LOCAL==='TRUE'?true:false
+  },
+
     //headless:false,
     // proxyConfiguration: new ProxyConfiguration({ proxyUrls: ['...'] })
     requestHandlerTimeoutSecs: 3600,
