@@ -1,36 +1,34 @@
 
-const pSelector = '.ProductListWrapper'
-const dpSelector = '[data-section-type="product"]'
+const pSelector = '.ProductItem'
+
 const phref = '.Header__MainNav a'
-const dphref = '.ProductItem__Wrapper a'
+
 const url = ['https://selinkucuksoz.com/']
 
 
-export { pSelector, dpSelector, phref, dphref, url }
+export { pSelector, phref, url }
 
 
-export default async function selinkucuksoz ({page}){
-debugger
-    const data = await page.evaluate(() => {
-        try {
-            const image = Array.from(document.querySelectorAll('.Product__SlideItem img')).map(m=>'https:'+m.getAttribute('data-original-src'))
-            const title = document.querySelector('.ProductMeta__Title ').innerText
-            const price = document.querySelector('.ProductMeta__Price span').innerText.trim().replace('TL','')
-            const color=''
-            const link = document.URL
-            return {
-                image,
-                title,
-                price,
-                color,
-                link
-            }
-        } catch (error) {
-            return { error: error.toString(), content: document.innerHTML }
-        }
-    })
+export default async function beymenclub({ page,addRequests }) {
+
+    //  await getUrls(page,addRequests)
+   debugger
+   const data = await page.$$eval('.ProductItem', (documents) => {
+
+       return documents.map(document => {
+           return {
+               image: [document.querySelector('img.ProductItem__Image').srcset.split(',')[3].trim().split(' ')[0]],
+               title: document.querySelector('.ProductItem__Title a').innerText,
+               price: '',
+               link: document.querySelector('.ProductItem__Title a').href,
+               currency: 'TL'
+           }
+       })
+
+   })
 
 
-    return { ...data}
+   return data
 
 }
+
