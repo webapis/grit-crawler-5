@@ -13,3 +13,4 @@ jobs:
       WEBSITE: 'biraradamoda'
       marka: 'nihanpeker'
     secrets: inherit
+c
