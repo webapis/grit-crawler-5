@@ -14,7 +14,7 @@ const crawler = new PuppeteerCrawler({
     useChrome: process.env.LOCAL==='TRUE'?true:false
   },
 
-    //headless:false,
+    headless:false,
     // proxyConfiguration: new ProxyConfiguration({ proxyUrls: ['...'] })
     requestHandlerTimeoutSecs: 3600,
     requestHandler: router,

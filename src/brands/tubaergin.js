@@ -1,5 +1,5 @@
 
-const pSelector = '#product-list-container'
+const pSelector = '.showcase-container'
 
 const phref = '#navigation a'
 
