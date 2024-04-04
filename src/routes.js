@@ -29,22 +29,26 @@ router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks, a
     const title = await page.title();
     log.info(`LIST ${title}`, { url: request.loadedUrl });
     debugger
-    await page.waitForSelector(pSelector)
+  const exists =  await page.$(pSelector)
+    if(exists){
+        const brandVar = await import(`./brands/${brand}.js`)
+        debugger
+        const handler = brandVar.default
+        debugger
+        const data = await handler({ page, enqueueLinks, request, log, addRequests })
+        debugger
+        const mapPageTitle = data.map(m => { return { ...m, pageTitle: title } })
+        debugger
+        // await enqueueLinks({
+        //     selector: dphref,
+        //     label: 'detail',
+        // });
+    
+        await productsDataset.pushData(mapPageTitle);
+    }else{
+        console.log('NOT PRODUCT PAGE:', request.loadedUrl)
+    }
 
-    const brandVar = await import(`./brands/${brand}.js`)
-    debugger
-    const handler = brandVar.default
-    debugger
-    const data = await handler({ page, enqueueLinks, request, log, addRequests })
-    debugger
-    const mapPageTitle = data.map(m => { return { ...m, pageTitle: title } })
-    debugger
-    // await enqueueLinks({
-    //     selector: dphref,
-    //     label: 'detail',
-    // });
-
-    await productsDataset.pushData(mapPageTitle);
     debugger
 });
 // router.addHandler('detail', async ({ request, page, log, pushData }) => {

@@ -1,9 +1,9 @@
 
 const pSelector = '.catalog-products'
 
-const phref = '.list-group-item a'
+const phref = 'nav a'
 
-const url = ['https://www.defacto.com.tr/statik/sitemap']
+const url = ['https://www.defacto.com.tr/kadin']
 
 
 export { pSelector, phref, url }
