@@ -1,7 +1,9 @@
 [
     {
         "keywords": [
-            "elbise"
+            "elbise",
+            "dresses",
+            "dress"
         ],
         "name": "elbise",
         "group":"üst giyim"
@@ -22,7 +24,9 @@
     }
     ,   {
         "keywords": [
-            "t-Shirt"
+            "t-Shirt",
+            "tişört",
+            "T-Shirt"
         ],
         "name": "T-Shirt",
         "group":"üst giyim"
