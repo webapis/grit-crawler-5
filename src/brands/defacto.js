@@ -1,9 +1,9 @@
-
+import autoscroller from '../utils/autoscroll.js'
 const pSelector = '.catalog-products'
 
-const phref = 'nav a'
+const phref = '.list-group-item a'
 
-const url = ['https://www.defacto.com.tr/kadin']
+const url = ['https://www.defacto.com.tr/statik/sitemap']
 
 
 export { pSelector, phref, url }
@@ -13,10 +13,13 @@ export default async function defacto({ page, enqueueLinks, request, log, addReq
     debugger
     const title = await page.title();
     log.info(`COLLECT ${title}`, { url: request.loadedUrl });
-    const urls = await getUrls(page)
-    const mapurls = urls.map(m => { return { url: m } })
+   const urls = await getUrls(page)
+    const mapurls = urls.map(m => { return { url: m, userData: {
+        label: 'list',
+    }, } })
     await addRequests(mapurls)
     debugger
+   await autoscroller(page,100)
     const data = await page.$$eval('.product-card', (documents) => {
 
         return documents.map(document => {
