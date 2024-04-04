@@ -22,7 +22,7 @@ export default async function machka({ page, enqueueLinks, request, log }) {
                 try {
                     return {
                          image: [document.querySelector('[data-image-src]').getAttribute('data-image-src')],
-                         title: '.ems-prd-title',
+                         title: document.querySelector('.ems-prd-title').innerText,
                          price: document.querySelector('.ems-prd-price-last').innerText.replace('₺','').trim(),
                          link: document.querySelector('.item-link').href,
                         currency: 'TL'
