@@ -17,6 +17,7 @@ debugger
 
 if (data.length > 0) {
   await uploadCollection({ fileName: `${marka}`, data: dataToUpload, gender: 'sponsor', marka })
+  console.log('uploaded data length---',dataToUpload.length)
 } else {
   throw 'No Items found to upload'
 }
