@@ -1,4 +1,4 @@
-name: defacto
+name: alfa-beta
 on:
   schedule:
     - cron:  '0 0 * * 1,3'
@@ -11,5 +11,5 @@ jobs:
       GENDER: sponsor
       maxconcurrency: '5'
       WEBSITE: 'biraradamoda'
-      marka: 'defacto'
+      marka: 'alfa-beta'
     secrets: inherit
