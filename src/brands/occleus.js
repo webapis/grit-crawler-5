@@ -3,7 +3,7 @@ const pSelector = '.collection__main'
 
 const phref = '.header__primary-nav a'
 
-const url = ['https://occleus.com/']
+const url = ['https://occleus.com/tr/']
 
 
 export { pSelector, phref, url }
