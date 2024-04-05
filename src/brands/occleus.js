@@ -1,7 +1,7 @@
 
 const pSelector = '.collection__main'
 
-const phref = '.header__primary-nav a'
+const phref = 'nav a'
 
 const url = ['https://occleus.com/tr/']
 
