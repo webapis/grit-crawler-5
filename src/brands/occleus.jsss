@@ -1,7 +1,7 @@
-
+//not working on github
 const pSelector = '.collection__main'
 
-const phref = 'nav a'
+const phref = '.header__primary-nav a'
 
 const url = ['https://occleus.com/tr/']
 
