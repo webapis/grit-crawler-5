@@ -21,6 +21,7 @@ export default async function yargici({ page }) {
                 price: obj.price,
                 color:obj.variant,
                 link: document.querySelector('a').href,
+                pageTitle:document.querySelector('h1.h5.font-weight-bold.text-black').innerText,
                 currency:'TL'
             }
         })
