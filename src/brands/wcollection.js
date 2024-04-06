@@ -13,7 +13,7 @@ export default async function wcollection({ page,enqueueLinks }) {
     debugger
 
     await enqueueLinks({
-        selector:'w-pagination a',
+        selector:'a.page',
         label: 'list',
     });
     const data = await page.$$eval('wcollection-list-item', (documents) => {
