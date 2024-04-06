@@ -11,7 +11,8 @@ export { pSelector, phref, url }
 
 export default async function yargici({ page }) {
     debugger
-    const data = await page.$$eval('[data-enhanced-impressions]', (documents) => {
+    const pageTitle = await page.evaluate(()=>document.querySelector('h1.h5.font-weight-bold.text-black').innerText)
+    const data = await page.$$eval('[data-enhanced-impressions]', (documents,_pageTitle) => {
 
         return documents.map(document => {
             const obj = JSON.parse(document.getAttribute('data-enhanced-impressions'))
@@ -21,12 +22,12 @@ export default async function yargici({ page }) {
                 price: obj.price,
                 color:obj.variant,
                 link: document.querySelector('a').href,
-                pageTitle:document.querySelector('h1.h5.font-weight-bold.text-black').innerText,
+                pageTitle:_pageTitle,
                 currency:'TL'
             }
         })
 
-    })
+    },pageTitle)
 
     debugger
     return data
