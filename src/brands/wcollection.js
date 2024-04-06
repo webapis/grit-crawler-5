@@ -9,8 +9,13 @@ const url = ['https://www.wcollection.com.tr/site-haritasi']
 export { pSelector, dpSelector, phref, dphref, url }
 
 
-export default async function wcollection({ page }) {
+export default async function wcollection({ page,enqueueLinks }) {
     debugger
+
+    await enqueueLinks({
+        selector:'w-pagination a',
+        label: 'list',
+    });
     const data = await page.$$eval('wcollection-list-item', (documents) => {
 
         return documents.map(document => {
