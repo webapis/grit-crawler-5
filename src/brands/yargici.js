@@ -11,7 +11,7 @@ export { pSelector, phref, url }
 
 export default async function yargici({ page }) {
     debugger
-    const pageTitle = await page.evaluate(()=>document.querySelector('h1.h5.font-weight-bold.text-black').innerText)
+    const pageTitle = await page.evaluate(()=>Array.from(document.querySelectorAll('.breadcrumb li')).map(m=>m.innerText.replaceAll('\n','').trim() ).join(' '))
     const data = await page.$$eval('[data-enhanced-impressions]', (documents,_pageTitle) => {
 
         return documents.map(document => {
