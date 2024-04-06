@@ -37,7 +37,7 @@ router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks, a
         debugger
         const data = await handler({ page, enqueueLinks, request, log, addRequests })
         debugger
-        const mapPageTitle = data.map(m => { return { ...m, pageTitle: title } })
+        const mapPageTitle = data.map(m => { return { ...m, pageTitle: title,pageUrl:request.loadedUrl } })
         debugger
         // await enqueueLinks({
         //     selector: dphref,
