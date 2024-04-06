@@ -2,6 +2,8 @@ import dotenv from 'dotenv';
 import { createPuppeteerRouter, Dataset } from 'crawlee';
 
 import cleanPrice from './utils/cleanPrice.js';
+
+const forcewait = ['wcollection']
 dotenv.config({ silent: true });
 
 const brand = process.env.marka
@@ -29,28 +31,34 @@ router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks, a
     const title = await page.title();
     log.info(`LIST ${title}`, { url: request.loadedUrl });
     debugger
-  const exists =  await page.$(pSelector)
-    if(exists){
+    let exists = false
+    if (forcewait.includes(brand)) {
+        await page.waitForSelector(pSelector)
+        exists = true
+
+    } else {
+        exists =await page.$(pSelector)
+
+    }
+
+    if (exists) {
         const brandVar = await import(`./brands/${brand}.js`)
         debugger
         const handler = brandVar.default
         debugger
         const data = await handler({ page, enqueueLinks, request, log, addRequests })
         debugger
-        const mapPageTitle = data.map(m => { return { ...m, pageTitle: title,pageUrl:request.loadedUrl } })
+        const mapPageTitle = data.map(m => { return { ...m, pageTitle: title, pageUrl: request.loadedUrl } })
         debugger
-        // await enqueueLinks({
-        //     selector: dphref,
-        //     label: 'detail',
-        // });
-    
-        await productsDataset.pushData(mapPageTitle);
-    }else{
-        console.log('NOT PRODUCT PAGE:', request.loadedUrl)
-    }
 
-    debugger
-});
+
+        await productsDataset.pushData(mapPageTitle);
+        }else{
+            console.log('NOT PRODUCT PAGE:', request.loadedUrl)
+        }
+
+        debugger
+    });
 // router.addHandler('detail', async ({ request, page, log, pushData }) => {
 //     const title = await page.title();
 //     log.info(`DETAIL ${title}`, { url: request.loadedUrl });
