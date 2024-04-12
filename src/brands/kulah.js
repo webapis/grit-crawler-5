@@ -11,7 +11,8 @@ export { pSelector, phref, url }
 
 export default async function kulah({ page }) {
     debugger
-    const data = await page.$$eval('.ItemOrj', (documents) => {
+    const breadcrumb =await page.evaluate(()=> Array.from(document.querySelectorAll('.breadcrumb a')).map(m => m.innerText).join(' '))
+    const data = await page.$$eval('.ItemOrj', (documents,breadcrumb_) => {
 
         return documents.map(document => {
             return {
@@ -19,12 +20,12 @@ export default async function kulah({ page }) {
                 title: document.querySelector('.productName.detailUrl').innerText,
                 price: document.querySelector('.discountPrice span').innerText.replace('₺', ''),
                 link: document.querySelector('.productName.detailUrl a').href,
-                breadcrumb: Array.from(document.querySelectorAll('.breadcrumb a')).map(m => m.innerText).join(' '),
+                breadcrumb:breadcrumb_ ,
                 currency: 'TL'
             }
         })
 
-    })
+    },breadcrumb)
 
     debugger
     return data
