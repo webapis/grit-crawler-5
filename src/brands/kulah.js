@@ -17,9 +17,10 @@ export default async function kulah({ page }) {
             return {
                 image: [document.querySelector('a.detailLink.detailUrl img').getAttribute('data-src')],
                 title: document.querySelector('.productName.detailUrl').innerText,
-                price: document.querySelector('.discountPrice span').innerText.replace('₺',''),
+                price: document.querySelector('.discountPrice span').innerText.replace('₺', ''),
                 link: document.querySelector('.productName.detailUrl a').href,
-                currency:'TL'
+                breadcrumb: Array.from(document.querySelectorAll('.breadcrumb a')).map(m => m.innerText).join(' '),
+                currency: 'TL'
             }
         })
 
