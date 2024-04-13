@@ -14,8 +14,8 @@ debugger
 const productsDataset = await Dataset.open('products');
 export const router = createPuppeteerRouter();
 
-router.addDefaultHandler(async ({ enqueueLinks, log, page }) => {
-    log.info(`enqueueing new URLs`);
+router.addDefaultHandler(async ({ enqueueLinks, log, page,request }) => {
+    log.info(`enqueueing new URLs`, request.loadedUrl);
     await page.waitForSelector(phref)
     const result = await enqueueLinks({
         selector: phref,
