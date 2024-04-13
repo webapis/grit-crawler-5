@@ -1,7 +1,7 @@
 import  autoScroll  from "../utils/autoscroll.js"
 const pSelector = '#catalogProductsList'
-const phref = 'a.vsv-link'
-const url = ['https://shop.mango.com/tr/kadin']
+const phref = 'ul li a[class~="text-body-m"]'
+const url = ['https://shop.mango.com/tr/kadin/elbise-ve-tulum_c55363448']
 
 
 export { pSelector, phref, url }

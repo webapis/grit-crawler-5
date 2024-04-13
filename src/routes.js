@@ -20,7 +20,7 @@ router.addDefaultHandler(async ({ enqueueLinks, log, page }) => {
     const result = await enqueueLinks({
         selector: phref,
         label: 'list',
-        limit: process.env.LOCAL === 'TRUE' ? 5 : 0,
+        limit: process.env.LOCAL === 'TRUE' ? 20 : 0,
     });
     debugger;
 

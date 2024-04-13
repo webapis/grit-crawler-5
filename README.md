@@ -1,2 +1,8 @@
 # grit-crawler-5
  
+ABCD 1,3
+EFGH 3,5
+IJKL 5,7
+MNOP 2,4
+QRST 5,7
+UVWXYZ 3,5
