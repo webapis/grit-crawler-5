@@ -17,7 +17,7 @@ export default async function adl({ page }) {
             return {
                 image: ['https:'+ document.querySelector('.showcase-image img').getAttribute('data-src')],
                 title: document.querySelector('.showcase-title a').innerText,
-                price: document.querySelector('.showcase-price-new').innerText.replace('$',''),
+                price: document.querySelector('.showcase-price-new').innerText,
                 link: document.querySelector('.showcase-label-container').href,
                 currency:'USD'
             }
