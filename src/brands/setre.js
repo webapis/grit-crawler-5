@@ -38,15 +38,15 @@ export default async function setre({ page, enqueueLinks, request, log }) {
     const data = await page.$$eval('.productItem', (documents) => {
 
         return documents.map(document => {
-            const lastPrice = document.querySelector('span.lastprice') ? document.querySelector('span.lastprice').innerText.replace('₺', '').trim() : null
-            const discountPrice = document.querySelector('.discountPrice span') ? document.querySelector('.discountPrice span').innerText.replace('₺', '').trim() : null
+            const lastPrice = document.querySelector('span.lastprice') ? document.querySelector('span.lastprice').innerText.replace('$', '').trim() : null
+            const discountPrice = document.querySelector('.discountPrice span') ? document.querySelector('.discountPrice span').innerText.replace('$', '').trim() : null
             try {
                 return {
                     image: [document.querySelector('img.resimOrginal').getAttribute('data-original')],
                     title: document.querySelector('.productName').innerText,
                     price: lastPrice ? lastPrice : discountPrice,
                     link: document.querySelector('.productName a').href,
-                    currency: 'TL'
+                    currency: 'USD'
                 }
             } catch (error) {
                 return { error: error.toString() }
