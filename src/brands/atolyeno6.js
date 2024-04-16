@@ -1,9 +1,9 @@
 import autoscroll from '../utils/autoscroll.js'
-const pSelector = '#ProductPageProductList'
+const pSelector = ''
 
-const phref = '.navigation a'
+const phref = '.headerMenu a'
 
-const url = ['https://www.setre.com/']
+const url = ['https://www.atolyeno6.com.tr/kategori/yeni-urunler']
 
 
 export { pSelector, phref, url }
@@ -11,7 +11,7 @@ export { pSelector, phref, url }
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-export default async function setre({ page, enqueueLinks, request, log }) {
+export default async function atolyeno6({ page, enqueueLinks, request, log }) {
     debugger
     const title = await page.title();
     log.info(`COLLECT ${title}`, { url: request.loadedUrl });
@@ -20,12 +20,12 @@ export default async function setre({ page, enqueueLinks, request, log }) {
 
     const links = await page.$$('.navigation #divUcTopMenu .ulVar');
     debugger
-    if (request.loadedUrl === 'https://www.setre.com/yaz-sezonu') {
+    if (request.loadedUrl === 'https://www.atolyeno6.com.tr/kategori/yeni-urunler') {
         for (let link of links) {
 
             await link.hover();
             await enqueueLinks({
-                selector: '.navigation a',
+                selector: '.headerMenu a',
                 label: 'list',
             });
             // Wait for a short time to allow the sub-links to appear, adjust this timing as needed
@@ -35,11 +35,10 @@ export default async function setre({ page, enqueueLinks, request, log }) {
 
     }
     await autoscroll(page, 50)
-    const data = await page.$$eval('.productItem', (documents) => {
+    const data = await page.$$eval('.shopProduct', (documents) => {
 
         return documents.map(document => {
-            const lastPrice = document.querySelector('span.lastprice') ? document.querySelector('span.lastprice').innerText.replace('₺', '').trim() : null
-            const discountPrice = document.querySelector('.discountPrice span') ? document.querySelector('.discountPrice span').innerText.replace('₺', '').trim() : null
+          
             try {
                 return {
                     image: [document.querySelector('img.resimOrginal').getAttribute('data-original')],
