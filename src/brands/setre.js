@@ -69,7 +69,7 @@ async function getUrls(page, addRequests) {
     const url = await page.url()
     debugger;
     await page.waitForSelector('.appliedFilter.FiltrelemeUrunAdet span')
-    const productCount = await page.evaluate(() => parseInt(document.querySelector('.appliedFilter.FiltrelemeUrunAdet span').innerText.replace(/[^\d]/gi, '')))
+    const productCount = await page.evaluate(() => parseInt(document.querySelector('.appliedFilter.FiltrelemeUrunAdet span').innerText.replace(/[^\d]/gi, '') ))
     debugger;
     const totalPages = Math.ceil(productCount / 40)
     const pageUrls = []
