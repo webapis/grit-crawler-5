@@ -29,7 +29,7 @@ export default async function gustoeshop({ page, enqueueLinks, request, log, add
 
             try {
                 return {
-                    image: [document.querySelector('.image-inner img').getAttribute('data-src').replace('.jpg','.webp')],
+                    image: [document.querySelector('.image-inner img').getAttribute('data-src')],//.replace('.jpg','.webp')],
                     title: document.querySelector('.product-title a').innerText,
                     price: document.querySelector('.product-price').innerText,
                     link: document.querySelector('.product-title a').href,
