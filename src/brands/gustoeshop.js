@@ -18,22 +18,7 @@ export default async function gustoeshop({ page, enqueueLinks, request, log, add
     await page.waitForSelector(pSelector)
     debugger
 
-    // const links = await page.$$('.navigation #divUcTopMenu .ulVar');
-    // debugger
-    // if (request.loadedUrl === 'https://www.setre.com/yaz-sezonu') {
-    //     for (let link of links) {
-
-    //         await link.hover();
-    //         await enqueueLinks({
-    //             selector: '.navigation a',
-    //             label: 'list',
-    //         });
-    //         // Wait for a short time to allow the sub-links to appear, adjust this timing as needed
-    //         await delay(3000)// Adjust the time as per your requirements
-    //     }
-
-
-    // }
+    
 
     await getUrls(page, addRequests)
 
@@ -44,7 +29,7 @@ export default async function gustoeshop({ page, enqueueLinks, request, log, add
 
             try {
                 return {
-                    image: [document.querySelector('.image-inner img').getAttribute('data-src')],
+                    image: [document.querySelector('.image-inner img').getAttribute('data-src').replace('.jpg','.webp')],
                     title: document.querySelector('.product-title a').innerText,
                     price: document.querySelector('.product-price').innerText,
                     link: document.querySelector('.product-title a').href,
