@@ -23,7 +23,8 @@ export default async function wcollection({ page,enqueueLinks }) {
                 image: Array.from(document.querySelectorAll('swiper-slide img')).map(m => m.src),
                 title: document.querySelector('.product-title h3').innerText,
                 price: document.querySelector('.product-item__price--retail').innerText.replace('₺', ''),
-                link: document.querySelectorAll('a')[1].href
+                link: document.querySelectorAll('a')[1].href,
+                currency:'TL'
             }
         })
 
