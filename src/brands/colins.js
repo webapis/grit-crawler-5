@@ -15,7 +15,7 @@ export default async function colins({ page, enqueueLinks, request, log }) {
     log.info(`COLLECT ${title}`, { url: request.loadedUrl });
     await page.waitForSelector(pSelector)
     debugger
-    // await autoscroll(page, 150)
+     await autoscroll(page, 80)
     const data = await page.$$eval('.productCartMain', (documents) => {
 
         return documents.map(document => {
