@@ -23,7 +23,7 @@ export default async function colins({ page, enqueueLinks, request, log }) {
             const priceLast = document.querySelector('.product-price') ? document.querySelector('.product-price').innerText.replace('TL', '').trim() : null
             try {
                 return {
-                    image: [],
+                    image: [document.querySelector('[data-original]').getAttribute('data-original')],
                     title: document.querySelector('.product-name.track-link').getAttribute('title'),
                     price: priceNew ? priceNew : priceLast,
                     link: document.querySelector('.product-name.track-link').href,
