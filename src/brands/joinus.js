@@ -1,22 +1,40 @@
 
 const pSelector = '.product-collection'
 
-const phref = '.wrapper-navigation a'
+const phref = '.sidebar-link-lv1 a'
 
-const url = ['https://joinus.com.tr/']
+const url = ['https://joinus.com.tr/collections/kadin-yeni-sezon']
 
 
 export { pSelector, phref, url }
-
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 export default async function joinus({ page, enqueueLinks, request, log }) {
     debugger
     const title = await page.title();
     log.info(`COLLECT ${title}`, { url: request.loadedUrl });
-    await enqueueLinks({
-        selector: '.pagination a',
-        label: 'list',
-    });
+
+
+
+    //const links = await page.$$('.dropdown.mega-menu');
+
+    debugger
+    if (request.loadedUrl === 'https://joinus.com.tr/collections/kadin-yeni-sezon') {
+    //     for (let link of links) {
+
+    //         await link.hover();
+    //         await enqueueLinks({
+    //             selector: '.pagination a',
+    //             label: 'list',
+    //         });
+    //         // Wait for a short time to allow the sub-links to appear, adjust this timing as needed
+    //         await delay(3000)// Adjust the time as per your requirements
+      }
+
+
+    // }
     debugger
     const data = await page.$$eval('.grid-item', (documents) => {
 
