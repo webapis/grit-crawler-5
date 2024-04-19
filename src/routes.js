@@ -14,17 +14,15 @@ debugger
 const productsDataset = await Dataset.open('products');
 export const router = createPuppeteerRouter();
 
-router.addDefaultHandler(async ({ enqueueLinks, log, page, request }) => {
+router.addDefaultHandler(async ({ enqueueLinks, log, page,request }) => {
     log.info(`enqueueing new URLs`, request.loadedUrl.toString());
-    const exists = await page.$(phref)
-    if (exists) {
-        const result = await enqueueLinks({
-            selector: phref,
-            label: 'list',
-            //    limit: process.env.LOCAL === 'TRUE' ? 20 : 0,
-        });
-    }
-
+    await page.waitForSelector(phref)
+    
+    const result = await enqueueLinks({
+        selector: phref,
+        label: 'list',
+    //    limit: process.env.LOCAL === 'TRUE' ? 20 : 0,
+    });
     debugger;
 
 });
@@ -40,7 +38,7 @@ router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks, a
         exists = true
 
     } else {
-        exists = await page.$(pSelector)
+        exists =await page.$(pSelector)
 
     }
 
@@ -56,12 +54,12 @@ router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks, a
 
 
         await productsDataset.pushData(mapPageTitle);
-    } else {
-        console.log('NOT PRODUCT PAGE:', request.loadedUrl)
-    }
+        }else{
+            console.log('NOT PRODUCT PAGE:', request.loadedUrl)
+        }
 
-    debugger
-});
+        debugger
+    });
 // router.addHandler('detail', async ({ request, page, log, pushData }) => {
 //     const title = await page.title();
 //     log.info(`DETAIL ${title}`, { url: request.loadedUrl });
