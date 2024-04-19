@@ -33,7 +33,7 @@ export default async function gustoeshop({ page, enqueueLinks, request, log, add
                     title: document.querySelector('.product-title a').innerText,
                     price: document.querySelector('.product-price').innerText,
                     link: document.querySelector('.product-title a').href,
-                    currency: 'TL'
+                    currency: 'USD'
                 }
             } catch (error) {
                 return { error: error.toString() }
