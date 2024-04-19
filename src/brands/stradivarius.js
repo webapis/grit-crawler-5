@@ -1,7 +1,7 @@
 import autoscroll from '../utils/autoscroll.js'
 const pSelector = '[id^="ProductGridItem_"]'
 
-const phref = '[data-cy="visual-filter-item"]'
+const phref = 'a.item-category'
 
 const url = ['https://www.stradivarius.com/tr/kadin/yeni-n1906']
 
@@ -17,6 +17,13 @@ export default async function stradivarius({ page, enqueueLinks, request, log })
     log.info(`COLLECT ${title}`, { url: request.loadedUrl });
     await page.waitForSelector(pSelector)
     debugger
+    await page.waitForSelector('.clickable-area.cursor-pointer')
+    await page.click()
+    await delay(2000)
+            await enqueueLinks({
+                selector: 'a.item-category',
+                label: 'list',
+            });
     await page.waitForSelector('[data-testid="change-view-button"]')
     await page.click('[data-testid="change-view-button"]')
     await delay(3000)
