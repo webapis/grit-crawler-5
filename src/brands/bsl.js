@@ -1,9 +1,9 @@
 
 const pSelector = '.PrdContainer'
 
-const phref = '#SitemapMenu a'
+const phref = '.nav-menu a'
 
-const url = ['https://www.bsl.com.tr/tr/site-haritasi']
+const url = ['https://www.bsl.com.tr/tr/elbise/uzun-elbise/']
 
 
 export { pSelector, phref, url }
