@@ -30,7 +30,8 @@ router.addDefaultHandler(async ({ enqueueLinks, log, page,request }) => {
 
 router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks, addRequests }) => {
     const title = await page.title();
-    log.info(`LIST ${title}`, { url: request.loadedUrl });
+    //const url = await page.url()
+    log.info(`LIST ${title}`, request.loadedUrl );
     debugger
     let exists = false
     if (forcewait.includes(brand)) {
