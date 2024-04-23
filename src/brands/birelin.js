@@ -22,7 +22,7 @@ export default async function fever({ page }) {
                     title: document.querySelector('.productName.detailUrl').innerText,
                     price: document.querySelector('.discountPrice').innerText.replace('₺', ''),
                     link: document.querySelector('.productName.detailUrl a').href,
-                    currency: 'TL'
+                    currency: 'USD'
                 }
             } catch (error) {
                 return { error: error.toString(), content: document.innerHTML }
