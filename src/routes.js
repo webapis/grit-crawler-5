@@ -16,7 +16,7 @@ export const router = createPuppeteerRouter();
 
 router.addDefaultHandler(async ({ enqueueLinks, log, page,request }) => {
     const url = await page.url()
-    log.info(`enqueueing new URLs`, url);
+    console.log(`enqueueing new URLs`, url);
     await page.waitForSelector(phref)
     
     const result = await enqueueLinks({
