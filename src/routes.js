@@ -15,7 +15,8 @@ const productsDataset = await Dataset.open('products');
 export const router = createPuppeteerRouter();
 
 router.addDefaultHandler(async ({ enqueueLinks, log, page,request }) => {
-    log.info(`enqueueing new URLs`, request.loadedUrl.toString());
+    const url = await page.url()
+    log.info(`enqueueing new URLs`, url);
     await page.waitForSelector(phref)
     
     const result = await enqueueLinks({
@@ -30,8 +31,8 @@ router.addDefaultHandler(async ({ enqueueLinks, log, page,request }) => {
 
 router.addHandler('list', async ({ request, page, log, pushData, enqueueLinks, addRequests }) => {
     const title = await page.title();
-    //const url = await page.url()
-    log.info(`LIST ${title}`, request.loadedUrl );
+    const url = await page.url()
+    log.info(`LIST ${title}`, url );
     debugger
     let exists = false
     if (forcewait.includes(brand)) {
