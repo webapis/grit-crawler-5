@@ -25,7 +25,7 @@ export default async function rueonline({ page, enqueueLinks, request, log }) {
                          title: document.querySelector('.productName').innerText,
                          price: document.querySelector('.discountPrice').innerText.replace('TL','').trim(),
                          link: document.querySelector('.productName a').href,
-                         currency: 'TL'
+                         currency: 'USD'
                     }
                 } catch (error) {
                     return { error: error.toString()}
