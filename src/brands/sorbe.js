@@ -23,9 +23,9 @@ export default async function sorbe({ page, enqueueLinks, request, log }) {
                     return {
                          image: [document.querySelector('[data-original]').getAttribute('data-original')],
                          title: document.querySelector('.productName.detailUrl a').getAttribute('title'),
-                         price: document.querySelector('.discountPrice').innerText.replace('₺',''),
+                         price: document.querySelector('.discountPrice').innerText.replace('USD',''),
                          link: document.querySelector('.productName.detailUrl a').href,
-                         currency: 'TL'
+                         currency: 'USD'
                     }
                 } catch (error) {
                     return { error: error.toString()}
