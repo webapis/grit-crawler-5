@@ -23,7 +23,7 @@ export default async function naiaofficial({ page, enqueueLinks, request, log })
         return documents.map(document => {
             try {
                 return {
-                    image: ['http:' + document.querySelector('[data-srcset]').getAttribute('data-srcset').split(',')[5].split(' ').filter(f => f)[0]],
+                    image: ['http:' + document.querySelector('[data-bgset]').getAttribute('data-bgset').split(',')[3].split(' ').filter(f=>f)[0]],
                     title: document.querySelector('.product__grid__title').innerText,
                     price: document.querySelector('.new-price').innerText.replace('₺', '').trim(),
                     link: document.querySelector('.product-link').href,
