@@ -23,7 +23,7 @@ export default async function sorbe({ page, enqueueLinks, request, log }) {
                     return {
                          image: [document.querySelector('[data-original]').getAttribute('data-original')],
                          title: document.querySelector('.productName.detailUrl a').getAttribute('title'),
-                         price: document.querySelector('.discountPrice').innerText.replace('USD',''),
+                         price: document.querySelector('.discountPrice').innerText.replace('USD','').replaceAll('\n',''),
                          link: document.querySelector('.productName.detailUrl a').href,
                          currency: 'USD'
                     }
