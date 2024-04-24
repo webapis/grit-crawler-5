@@ -20,9 +20,9 @@ export default async function sherin({ page, addRequests }) {
                 return {
                     image:document.querySelector('[data-original]')? [document.querySelector('[data-original]').getAttribute('data-original')]:[document.querySelector('[data-src]').getAttribute('data-src')],
                     title: document.querySelector('.productName.detailUrl').innerText,
-                    price: document.querySelector('.discountPrice').innerText.replace('₺', ''),
+                    price: document.querySelector('.discountPrice').innerText.replace('€', ''),
                     link: document.querySelector('.productName.detailUrl a').href,
-                    currency: 'TL'
+                    currency: 'EUR'
                 }
             } catch (error) {
 
