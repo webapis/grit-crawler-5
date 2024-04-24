@@ -1,9 +1,9 @@
 
 const pSelector = '.collection__products'
 
-const phref = 'nav.header__menu a'
+const phref = ''
 
-const url = ['https://naiaofficial.com/']
+const url = ['https://naiaofficial.com/collections/all']
 
 
 export { pSelector, phref, url }

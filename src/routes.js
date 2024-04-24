@@ -14,16 +14,32 @@ debugger
 const productsDataset = await Dataset.open('products');
 export const router = createPuppeteerRouter();
 
-router.addDefaultHandler(async ({ enqueueLinks, log, page,request }) => {
+router.addDefaultHandler(async ({ enqueueLinks, log, page,request,addRequests }) => {
     const url = await page.url()
+    const title = await page.title();
     console.log(`enqueueing new URLs`, url);
-    await page.waitForSelector(phref)
+    if(phref.length>0){
+        await page.waitForSelector(phref)
     
-    const result = await enqueueLinks({
-        selector: phref,
-        label: 'list',
-    //    limit: process.env.LOCAL === 'TRUE' ? 20 : 0,
-    });
+        const result = await enqueueLinks({
+            selector: phref,
+            label: 'list',
+        //    limit: process.env.LOCAL === 'TRUE' ? 20 : 0,
+        });
+    } else{
+        const brandVar = await import(`./brands/${brand}.js`)
+        debugger
+        const handler = brandVar.default
+        debugger
+        const data = await handler({ page, enqueueLinks, request, log, addRequests })
+        debugger
+        const mapPageTitle = data.map(m => { return { ...m, pageTitle: title, pageUrl: request.loadedUrl } })
+        debugger
+
+
+        await productsDataset.pushData(mapPageTitle);
+    }
+
     debugger;
 
 });
