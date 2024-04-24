@@ -18,7 +18,7 @@ export default async function sherin({ page, addRequests }) {
         return documents.map(document => {
             try {
                 return {
-                    image: [document.querySelector('[data-src]').getAttribute('data-src')],
+                    image:document.querySelector('[data-original]')? [document.querySelector('[data-original]').getAttribute('data-original')]:[document.querySelector('[data-src]').getAttribute('data-src')],
                     title: document.querySelector('.productName.detailUrl').innerText,
                     price: document.querySelector('.discountPrice').innerText.replace('₺', ''),
                     link: document.querySelector('.productName.detailUrl a').href,
@@ -29,7 +29,7 @@ export default async function sherin({ page, addRequests }) {
                 return { error: error.toString(), content: document.innerHTML }
             
             }
-
+//data-src
         })
 
     })
