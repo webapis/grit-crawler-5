@@ -1,4 +1,4 @@
-
+import searchObject from "../utils/searchObject"
 const pSelector = '.o-productList '
 
 const phref = '[data-navbar-item] a'
@@ -30,7 +30,7 @@ export default async function beymenclub({ page,addRequests }) {
 
 
  
-    return data
+    return data.filter(f=> searchObject(f,['kadin','kadın','bayan','woman']) )
 
 }
 
