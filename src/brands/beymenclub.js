@@ -1,4 +1,4 @@
-import searchObject from "../utils/searchObject"
+import searchObject from "../utils/searchObject.js"
 const pSelector = '.o-productList '
 
 const phref = '[data-navbar-item] a'
