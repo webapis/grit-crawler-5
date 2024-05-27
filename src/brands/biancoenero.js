@@ -22,7 +22,7 @@ export default async function biancoenero({ page, enqueueLinks, request, log, ad
         return documents.map(document => {
             try {
                 return {
-                    image: ['https'+document.querySelector('[srcset]').getAttribute('srcset').split(',')[1].split(' ').filter(f=>f)[0]],
+                    image: ['https:'+document.querySelector('[srcset]').getAttribute('srcset').split(',')[1].split(' ').filter(f=>f)[0]],
                     title: document.querySelector('.product-title').innerHTML,
                     price: Array.from(document.querySelector('sale-price').childNodes).reverse()[0].nodeValue.replace('TL','').replaceAll('\n','').trim(),
                     link: document.querySelector('.product-title').href,
