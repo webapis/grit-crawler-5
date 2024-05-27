@@ -24,9 +24,9 @@ export default async function modalogy({ page, enqueueLinks, request, log, addRe
                 return {
                     image: [document.querySelector("img[data-original]").getAttribute('data-original')],
                     title: document.querySelector('.productName.detailUrl a').innerText,
-                    price: document.querySelector(".discountPrice span").innerText.replace('₺',''),
+                    price: document.querySelector(".discountPrice span").innerText.replace('$',''),
                     link: document.querySelector('.productName.detailUrl a').href,
-                    currency: 'TL'
+                    currency: 'USD'
                 }
             } catch (error) {
                 return { error: error.toString(), content: document.innerHTML }
