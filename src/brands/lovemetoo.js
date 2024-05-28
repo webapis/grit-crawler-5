@@ -29,7 +29,7 @@ export default async function lovemetoo({ page, enqueueLinks, request, log }) {
                     title: document.querySelector('.product-block__title').innerText,
                     price: document.querySelector('.money').innerText.replace('TL','').trim(),
                     link: document.querySelector('.product-link').href,
-                    currency: 'TL'
+                    currency: 'USD'
                 }
             } catch (error) {
                 return { error: error.toString() }

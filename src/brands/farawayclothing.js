@@ -22,7 +22,7 @@ export default async function farawayclothing({ page, enqueueLinks, request, log
         return documents.map(document => {
             try {
                 return {
-                    image: [document.querySelector('[data-bgset]').getAttribute('data-bgset').split(',')[2].split(' ').filter(f=>f)[0]],
+                    image: ['https:'+document.querySelector('[data-bgset]').getAttribute('data-bgset').split(',')[2].split(' ').filter(f=>f)[0]],
                     title: document.querySelector('.product__grid__title span').innerText,
                     price: document.querySelector('.new-price').innerText.replace('TL',''),
                     link: document.querySelector('.product-link').href,
