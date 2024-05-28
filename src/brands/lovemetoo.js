@@ -27,7 +27,7 @@ export default async function lovemetoo({ page, enqueueLinks, request, log }) {
                 return {
                     image: ['https:'+document.querySelector('[data-srcset]').getAttribute('data-srcset').split(',')[5].split(' ').filter(f=>f)[0]],
                     title: document.querySelector('.product-block__title').innerText,
-                    price: document.querySelector('.money').innerText.replace('TL','').trim(),
+                    price: document.querySelector('.money').innerText.replace('$','').trim(),
                     link: document.querySelector('.product-link').href,
                     currency: 'USD'
                 }

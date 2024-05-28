@@ -20,9 +20,9 @@ export default async function rivus({ page }) {
                 return {
                     image: [document.querySelector('[data-src]').getAttribute('data-src')],
                     title: document.querySelector('.productName.detailUrl').innerText,
-                    price: document.querySelector('.discountPrice').innerText.replace('₺',''),
+                    price: document.querySelector('.discountPrice').innerText.replace('$',''),
                     link: document.querySelector('.productName.detailUrl a').href,
-                    currency: 'TL'
+                    currency: 'USD'
                 }
             } catch (error) {
                 return { error: error.toString(), content: document.innerHTML }
