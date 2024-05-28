@@ -15,6 +15,7 @@ export default async function loveOnfriday({ page, enqueueLinks, request, log, a
     debugger
     const title = await page.title();
     log.info(`COLLECT ${title}`, { url: request.loadedUrl });
+    await page.waitForSelector('a[href="javascript:;"]')
     const links = await page.$$('a[href="javascript:;"]');
     for (let link of links) {
 
