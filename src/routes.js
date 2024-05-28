@@ -3,7 +3,7 @@ import { createPuppeteerRouter, Dataset } from 'crawlee';
 
 import cleanPrice from './utils/cleanPrice.js';
 
-const forcewait = ['wcollection']
+const forcewait = ['wcollection',"jaquette"]
 dotenv.config({ silent: true });
 
 const brand = process.env.marka
