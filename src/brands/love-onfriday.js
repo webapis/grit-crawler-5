@@ -15,7 +15,7 @@ export default async function loveOnfriday({ page, enqueueLinks, request, log, a
     debugger
     const title = await page.title();
     log.info(`COLLECT ${title}`, { url: request.loadedUrl });
-    const links = await page.$$('a.tmenu_item_link');
+    const links = await page.$$('span.tmenu_item_text');
     for (let link of links) {
 
         await link.hover();
