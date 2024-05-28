@@ -34,7 +34,6 @@ export default async function lovemetoo({ page, enqueueLinks, request, log }) {
             } catch (error) {
                 return { error: error.toString() }
             }
-
         })
     })
 
