@@ -1,9 +1,9 @@
 
 const pSelector = '.product-list'
 
-const phref = '.tmenu_nav a'
+const phref = ''
 
-const url = ['https://en.love-onfriday.com/']
+const url = ['https://en.love-onfriday.com/collections/all']
 
 
 export { pSelector, phref, url }
@@ -15,18 +15,7 @@ export default async function loveOnfriday({ page, enqueueLinks, request, log, a
     debugger
     const title = await page.title();
     log.info(`COLLECT ${title}`, { url: request.loadedUrl });
-    await page.waitForSelector('a[href="javascript:;"]')
-    const links = await page.$$('a[href="javascript:;"]');
-    for (let link of links) {
 
-        await link.click();
-        await enqueueLinks({
-            selector: 'a.tmenu_item_link',
-            label: 'list',
-        });
-        // Wait for a short time to allow the sub-links to appear, adjust this timing as needed
-        await delay(3000)// Adjust the time as per your requirements
-    }
     await getUrls(page, addRequests)
     const data = await page.$$eval('.product-block', (documents) => {
   
