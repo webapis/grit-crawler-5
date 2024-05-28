@@ -15,7 +15,17 @@ export default async function loveOnfriday({ page, enqueueLinks, request, log, a
     debugger
     const title = await page.title();
     log.info(`COLLECT ${title}`, { url: request.loadedUrl });
+    const links = await page.$$('a.tmenu_item_link');
+    for (let link of links) {
 
+        await link.hover();
+        await enqueueLinks({
+            selector: 'a.tmenu_item_link',
+            label: 'list',
+        });
+        // Wait for a short time to allow the sub-links to appear, adjust this timing as needed
+        await delay(3000)// Adjust the time as per your requirements
+    }
     await getUrls(page, addRequests)
     const data = await page.$$eval('.product-block', (documents) => {
   
