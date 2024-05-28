@@ -15,12 +15,13 @@ export default async function berrin({ page }) {
     const data = await page.$$eval('.product-layout', (documents) => {
 
         return documents.map(document => {
-
+            const priceNormal = document.querySelector('.price-normal') ? document.querySelector('.price-normal').innerText.replace('TL', '').trim() : null
+            const priceNew = document.querySelector('.price-new') ? document.querySelector('.price-new').innerText.replace('TL', '').trim() : null
             try {
                 return {
-                    image: [document.querySelector('[data-srcset]').getAttribute('data-srcset').split(',')[0].split(' ').filter(f=>f)[0]],
+                    image: [document.querySelector('[data-srcset]').getAttribute('data-srcset').split(',')[0].split(' ').filter(f => f)[0]],
                     title: document.querySelector('div.name').innerText,
-                    price: document.querySelector('.price-new').innerText.replace('TL','').trim(),
+                    price: priceNormal ? priceNormal : priceNew,
                     link: document.querySelector('.image a').href,
                     currency: 'TL'
                 }
