@@ -3,7 +3,7 @@ const pSelector = '.product-list'
 
 const phref = '.tmenu_nav a'
 
-const url = ['https://www.love-onfriday.com/']
+const url = ['https://en.love-onfriday.com/']
 
 
 export { pSelector, phref, url }
