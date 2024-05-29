@@ -1,9 +1,45 @@
 
 const pSelector = '.product-grid'
 
-const phref = '#main-navigation-wrapper a'
+const phref = ''
 
-const url = ['https://jaquette.com.tr/']
+const url = [
+
+    "https://jaquette.com.tr/collections/jaquette-cool#",
+    "https://jaquette.com.tr/collections/yeni-urunler",
+    "https://jaquette.com.tr/collections/jaquette-cool#",
+    "https://jaquette.com.tr/collections/ss-24",
+    "https://jaquette.com.tr/collections/hayali-olanlarla-yuru",
+    "https://jaquette.com.tr/collections/ss-2023",
+    "https://jaquette.com.tr/collections/fw-gok-kok-ozgurluk",
+    "https://jaquette.com.tr/collections/queen-of-the-south",
+    "https://jaquette.com.tr/collections/jaquette-cool#",
+    "https://jaquette.com.tr/collections/jaquette-cool",
+    "https://jaquette.com.tr/collections/ceket",
+    "https://jaquette.com.tr/collections/kadin-kimono",
+    "https://jaquette.com.tr/collections/elbise",
+    "https://jaquette.com.tr/collections/bluz",
+    "https://jaquette.com.tr/collections/yelek",
+    "https://jaquette.com.tr/collections/pantolon",
+    "https://jaquette.com.tr/collections/etek",
+    "https://jaquette.com.tr/collections/pareo",
+    "https://jaquette.com.tr/collections/handbags",
+    "https://jaquette.com.tr/collections/hats",
+    "https://jaquette.com.tr/collections/kupe",
+    "https://jaquette.com.tr/collections/jaquette-cool#",
+    "https://jaquette.com.tr/collections/erkek-gomlek",
+    "https://jaquette.com.tr/collections/erkek-kimono",
+    "https://jaquette.com.tr/collections/50-indirim",
+    "https://jaquette.com.tr/collections/jaquette-cool#",
+    "https://jaquette.com.tr/pages/elvan-tiglioglu",
+    "https://jaquette.com.tr/pages/jaquette",
+    "https://jaquette.com.tr/collections/jaquette-cool#",
+    "https://jaquette.com.tr/blogs/press",
+ 
+    "https://jaquette.com.tr/blogs/news",
+
+
+]
 
 
 export { pSelector, phref, url }
