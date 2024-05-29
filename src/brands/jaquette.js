@@ -1,44 +1,43 @@
 
 const pSelector = '.product-grid'
 
-const phref = ''
+const phref = '#main-navigation-wrapper a'
 
 const url = [
-
-    "https://jaquette.com.tr/collections/jaquette-cool#",
-    "https://jaquette.com.tr/collections/yeni-urunler",
-    "https://jaquette.com.tr/collections/jaquette-cool#",
-    "https://jaquette.com.tr/collections/ss-24",
-    "https://jaquette.com.tr/collections/hayali-olanlarla-yuru",
-    "https://jaquette.com.tr/collections/ss-2023",
-    "https://jaquette.com.tr/collections/fw-gok-kok-ozgurluk",
-    "https://jaquette.com.tr/collections/queen-of-the-south",
-    "https://jaquette.com.tr/collections/jaquette-cool#",
-    "https://jaquette.com.tr/collections/jaquette-cool",
-    "https://jaquette.com.tr/collections/ceket",
-    "https://jaquette.com.tr/collections/kadin-kimono",
-    "https://jaquette.com.tr/collections/elbise",
-    "https://jaquette.com.tr/collections/bluz",
-    "https://jaquette.com.tr/collections/yelek",
-    "https://jaquette.com.tr/collections/pantolon",
-    "https://jaquette.com.tr/collections/etek",
-    "https://jaquette.com.tr/collections/pareo",
-    "https://jaquette.com.tr/collections/handbags",
-    "https://jaquette.com.tr/collections/hats",
-    "https://jaquette.com.tr/collections/kupe",
-    "https://jaquette.com.tr/collections/jaquette-cool#",
-    "https://jaquette.com.tr/collections/erkek-gomlek",
-    "https://jaquette.com.tr/collections/erkek-kimono",
-    "https://jaquette.com.tr/collections/50-indirim",
-    "https://jaquette.com.tr/collections/jaquette-cool#",
-    "https://jaquette.com.tr/pages/elvan-tiglioglu",
-    "https://jaquette.com.tr/pages/jaquette",
-    "https://jaquette.com.tr/collections/jaquette-cool#",
-    "https://jaquette.com.tr/blogs/press",
- 
-    "https://jaquette.com.tr/blogs/news",
-
-
+    "https://shop.jaquette.com.tr/#",
+    "https://shop.jaquette.com.tr/collections/new-in",
+    "https://shop.jaquette.com.tr/#",
+    "https://shop.jaquette.com.tr/collections/ss-24",
+    "https://shop.jaquette.com.tr/collections/walk-with-the-dreamers",
+    "https://shop.jaquette.com.tr/collections/ss-2023",
+    "https://shop.jaquette.com.tr/collections/fw-sky-root-freedom",
+    "https://shop.jaquette.com.tr/collections/queen-of-the-south",
+    "https://shop.jaquette.com.tr/#",
+    "https://shop.jaquette.com.tr/collections/jaquette-cool",
+    "https://shop.jaquette.com.tr/collections/jacket-dress",
+    "https://shop.jaquette.com.tr/collections/woman-kimono",
+    "https://shop.jaquette.com.tr/collections/elbi%CC%87se",
+    "https://shop.jaquette.com.tr/collections/bluz",
+    "https://shop.jaquette.com.tr/collections/yelek",
+    "https://shop.jaquette.com.tr/collections/pantolon",
+    "https://shop.jaquette.com.tr/collections/etek",
+    "https://shop.jaquette.com.tr/collections/pareo",
+    "https://shop.jaquette.com.tr/collections/handbags",
+    "https://shop.jaquette.com.tr/collections/hats",
+    "https://shop.jaquette.com.tr/collections/earring",
+    "https://shop.jaquette.com.tr/collections/discount",
+    "https://shop.jaquette.com.tr/#",
+    "https://shop.jaquette.com.tr/collections/man-shirt",
+    "https://shop.jaquette.com.tr/collections/man-kimono",
+    "https://shop.jaquette.com.tr/#",
+    "https://shop.jaquette.com.tr/pages/elvan-tiglioglu",
+    "https://shop.jaquette.com.tr/pages/jaquette",
+    "https://shop.jaquette.com.tr/#",
+    "https://shop.jaquette.com.tr/blogs/press",
+    "https://shop.jaquette.com.tr/blogs/social-media",
+    "https://shop.jaquette.com.tr/#",
+    "https://shop.jaquette.com.tr/pages/shops",
+    "https://shop.jaquette.com.tr/pages/contact"
 ]
 
 
