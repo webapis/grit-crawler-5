@@ -20,13 +20,13 @@ export default async function loveOnfriday({ page, enqueueLinks, request, log, a
     await getUrls(page, addRequests)
     await autoScroll(page, 50)
     const data = await page.$$eval('.product-block', (documents) => {
-  
+
         return documents.map(document => {
             try {
                 return {
-                    image: [document.querySelector(".rimage__image").getAttribute("srcset").split(",")[5].split(' ').filter(f=>f)[0]],
+                    image: ['https:' + document.querySelector(".rimage__image").getAttribute("srcset").split(",")[5].split(' ').filter(f => f)[0]],
                     title: document.querySelector('.product-block__title').innerText,
-                    price: document.querySelector('.product-price__item').innerText.replace('₺',''),
+                    price: document.querySelector('.product-price__item').innerText.replace('₺', ''),
                     link: document.querySelector('.product-link').href,
                     currency: 'TL'
                 }
@@ -51,13 +51,13 @@ async function getUrls(page, addRequests) {
 
     if (nextPage) {
 
-        const totalPages = await page.evaluate(() => Math.max(...Array.from(document.querySelectorAll('.pagination a')).map(m=>m.innerText).filter(Number)) )
+        const totalPages = await page.evaluate(() => Math.max(...Array.from(document.querySelectorAll('.pagination a')).map(m => m.innerText).filter(Number)))
 
 
         let pagesLeft = totalPages
         for (let i = 2; i <= totalPages; i++) {
 
-            const updatedUrl =updateUrlPage(url,i)
+            const updatedUrl = updateUrlPage(url, i)
             pageUrls.push(updatedUrl)
             --pagesLeft
 
@@ -70,15 +70,15 @@ async function getUrls(page, addRequests) {
 
 function updateUrlPage(url, newPage) {
     try {
-      // Attempt using URLSearchParams (recommended)
-      const newUrl = new URL(url);
-      newUrl.searchParams.set('page', newPage);
-      return newUrl.toString();
+        // Attempt using URLSearchParams (recommended)
+        const newUrl = new URL(url);
+        newUrl.searchParams.set('page', newPage);
+        return newUrl.toString();
     } catch (error) {
-      // Fallback to string manipulation if URLSearchParams fails
-      const baseUrl = url.split('?')[0];
-      const queryParams = new URLSearchParams(url.split('?')[1]);
-      queryParams.set('page', newPage);
-      return baseUrl + '?' + queryParams.toString();
+        // Fallback to string manipulation if URLSearchParams fails
+        const baseUrl = url.split('?')[0];
+        const queryParams = new URLSearchParams(url.split('?')[1]);
+        queryParams.set('page', newPage);
+        return baseUrl + '?' + queryParams.toString();
     }
-  }
+}
