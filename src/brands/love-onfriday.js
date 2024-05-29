@@ -1,4 +1,4 @@
-
+import autoScroll from "../utils/autoscroll.js"
 const pSelector = '.product-list'
 
 const phref = ''
@@ -12,11 +12,13 @@ function delay(ms) {
 }
 
 export default async function loveOnfriday({ page, enqueueLinks, request, log, addRequests }) {
+
     debugger
     const title = await page.title();
     log.info(`COLLECT ${title}`, { url: request.loadedUrl });
 
     await getUrls(page, addRequests)
+    await autoScroll(page, 50)
     const data = await page.$$eval('.product-block', (documents) => {
   
         return documents.map(document => {
