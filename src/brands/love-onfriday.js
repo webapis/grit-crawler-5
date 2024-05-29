@@ -55,7 +55,8 @@ async function getUrls(page, addRequests) {
         let pagesLeft = totalPages
         for (let i = 2; i <= totalPages; i++) {
 
-            pageUrls.push(`${url}?page=` + i)
+            const updatedUrl =updateUrlPage(url,i)
+            pageUrls.push(updatedUrl)
             --pagesLeft
 
         }
@@ -65,3 +66,17 @@ async function getUrls(page, addRequests) {
     return pageUrls
 }
 
+function updateUrlPage(url, newPage) {
+    try {
+      // Attempt using URLSearchParams (recommended)
+      const newUrl = new URL(url);
+      newUrl.searchParams.set('page', newPage);
+      return newUrl.toString();
+    } catch (error) {
+      // Fallback to string manipulation if URLSearchParams fails
+      const baseUrl = url.split('?')[0];
+      const queryParams = new URLSearchParams(url.split('?')[1]);
+      queryParams.set('page', newPage);
+      return baseUrl + '?' + queryParams.toString();
+    }
+  }
