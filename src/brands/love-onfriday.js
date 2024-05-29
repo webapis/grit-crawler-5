@@ -26,9 +26,9 @@ export default async function loveOnfriday({ page, enqueueLinks, request, log, a
                 return {
                     image: ['https:' + document.querySelector(".rimage__image").getAttribute("srcset").split(",")[5].split(' ').filter(f => f)[0]],
                     title: document.querySelector('.product-block__title').innerText,
-                    price: document.querySelector('.product-price__item').innerText.replace('₺', ''),
+                    price: document.querySelector('.product-price__item').innerText.replace('$', '').replace("USD", ""),
                     link: document.querySelector('.product-link').href,
-                    currency: 'TL'
+                    currency: 'USD'
                 }
             } catch (error) {
                 return { error: error.toString(), content: document.innerHTML }
